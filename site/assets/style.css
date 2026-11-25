@@ -4,5 +4,5 @@
 #correction-filters [aria-pressed="true"]{outline:2px solid currentColor;outline-offset:2px;font-weight:700}
 #correction-list .question{white-space:pre-wrap;overflow-wrap:anywhere}
 
-.filters label{grid-template-columns:minmax(0,1fr)}
+.filters label,.panel label{grid-template-columns:minmax(0,1fr)}
 .filters select,.filters input{min-width:0;width:100%}

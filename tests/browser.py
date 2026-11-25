@@ -5,6 +5,7 @@ from pathlib import Path
 from threading import Thread
 from playwright.sync_api import sync_playwright, expect
 import json
+import re
 
 root = Path(__file__).resolve().parents[1]
 server = ThreadingHTTPServer(('127.0.0.1', 0), partial(SimpleHTTPRequestHandler, directory=str(root)))
@@ -16,11 +17,18 @@ try:
         page = browser.new_page()
         errors = []
         page.on('pageerror',lambda e: errors.append(str(e)))
+        routes = {
+            'home': 'Học về AI', 'bank': 'Ngân hàng câu hỏi', 'exam': 'Luyện thi AI',
+            'learn': 'Lộ trình học', 'lab': 'Phòng lập trình', 'dataset': 'Phòng dữ liệu',
+            'review': 'Ôn tập hôm nay', 'analytics': 'Tiến độ học tập', 'plan': 'Kế hoạch học',
+            'settings': 'Cài đặt dữ liệu', 'inquiry': 'Hỏi học liệu', 'essay': 'Luyện tự luận',
+            'tutor': 'Trợ giảng', 'weekly': 'Xếp hạng tuần này', 'account': 'Tài khoản',
+        }
         for width in (1440,768,390):
             page.set_viewport_size({'width':width,'height':850})
-            for route in ('home','bank','exam','learn','lab','dataset','review','analytics','plan','settings','inquiry','essay'):
+            for route, heading in routes.items():
                 page.goto(base+'#'+route)
-                expect(page.locator('h1')).to_be_visible()
+                expect(page.locator('main h1')).to_contain_text(heading)
                 assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), (width,route)
         page.goto(base+'#exam/mock')
         page.locator('#count').fill('1')
@@ -40,6 +48,16 @@ try:
             page.locator('#code').fill(exercise['solution'])
             page.locator('#run').click()
             expect(page.locator('#console')).to_contain_text('2/2 ca đạt',timeout=100000)
+
+        page.goto(base+'#exam/mock')
+        page.clock.install()
+        page.locator('#count').fill('1')
+        page.locator('#setup button').click()
+        expect(page.locator('#clock')).to_have_text(re.compile(r'^(90:00|89:59)$'))
+        page.clock.fast_forward(90 * 60 * 1000 + 1000)
+        expect(page.locator('main h1')).to_have_text('Kết quả của bạn')
+        page.reload()
+        expect(page.locator('main h1')).to_have_text('Kết quả của bạn')
         assert not errors,errors
         browser.close()
 finally:
