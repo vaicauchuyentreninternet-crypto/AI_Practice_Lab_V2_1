@@ -1,0 +1,8 @@
+order_id,channel,customer,amount
+S01,Web,C01,120
+S02,Shop,C02,80
+S03,Web,C01,150
+S04,Shop,C03,
+S05,Web,C04,90
+S05,Web,C04,90
+S06,Shop,C02,60

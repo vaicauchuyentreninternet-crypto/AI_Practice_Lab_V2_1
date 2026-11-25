@@ -1,0 +1,21 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {parseCSV,serialize} from '../site/dataset.js';
+import {correct,mix,rate,state,blank,day,validateImport} from '../site/core.js';
+import {literalEqual} from '../site/answers.js';
+const read=n=>JSON.parse(readFileSync(new URL('../site/data/'+n+'.json',import.meta.url)));
+test('CSV parses BOM, quoted delimiter, multiline, escaped quote, empty trailing field and CRLF',()=>{
+ const tbl=parseCSV('\uFEFFa,b,c\r\n"x,y","q""t",\r\n"u\nv",0,1\n');assert.deepEqual(tbl.body,[['x,y','q"t',''],['u\nv','0','1']]);assert.deepEqual(parseCSV(serialize(tbl)),tbl);
+});
+test('invalid CSV is rejected before replacing current table',()=>{for(const bad of ['a,a\n1,2','a,b\nx','x\n"open','x\n"a"x',',b\n1,2'])assert.throws(()=>parseCSV(bad))});
+test('all canonical answer keys grade correctly and blank inputs never pass',()=>{for(const m of 'ABCD')for(const q of read(m)){assert.ok(correct(q,q.options.length?q.key:String(q.key)),q.id);for(const blank of [-1,'','  '])assert.equal(correct(q,blank),false,q.id)}});
+test('numeric locale and Python literal whitespace',()=>{assert.ok(correct({options:[],type:'Số',key:.5},'0,5'));assert.ok(literalEqual('[1,2]', '[1, 2]'));assert.ok(literalEqual('"Ab"',"'Ab'"));assert.equal(literalEqual("'ABC'","'abc'"),false);assert.equal(literalEqual('False','false'),false);assert.equal(literalEqual('0garbage','0'),false)});
+test('shuffle preserves membership and returns independent copies',()=>{let src=[1,2,3,4];let runs=Array.from({length:30},()=>mix(src));assert.ok(new Set(runs.map(JSON.stringify)).size>1);for(const r of runs)assert.deepEqual(r.toSorted(),src)});
+test('spaced repetition advances and relapses',()=>{for(let i=0;i<4;i++)rate('A001',true);assert.equal(state.reviews.A001.status,'Mastered');rate('A001',false);assert.equal(state.reviews.A001.due,day());assert.equal(state.reviews.A001.run,0)});
+test('study day respects the Vietnam midnight boundary',()=>{assert.equal(day(Date.parse('2026-11-24T17:00:00Z')),'2026-11-25')});
+test('import rejects damaged or incompatible backup',()=>{const q=new Set(['A001']),l=new Set(['L001']);assert.ok(validateImport(blank(),q,l,18));for(const patch of [{version:9},{done:{999:1}},{drafts:{L099:'unknown'}},{history:[{}]},{plan:{date:'broken'}}])assert.equal(validateImport({...blank(),...patch},q,l,18),false)});
+import {retrieve,verifyClaims,verifyGrade} from '../site/inquiry.js';
+test('RAG retrieves relevant sources and abstains on unknown terms',()=>{const ls=read('lessons');assert.equal(retrieve('keepdims broadcasting',ls)[0].topic,undefined);assert.match(retrieve('keepdims broadcasting',ls)[0].title,/Broadcasting/);assert.deepEqual(retrieve('xyzzy12345',ls),[])});
+test('rejects fabricated references and quotations',()=>{const docs=[{id:'L1',text:'Bằng chứng nguyên văn của bài học.'}];const c={claim:'Một ý',source:'L1',quote:'Bằng chứng nguyên văn'};assert.equal(verifyClaims({claims:[c]},docs).length,1);for(const patch of [{source:'L2'},{quote:'không có trong bài'}])assert.throws(()=>verifyClaims({claims:[{...c,...patch}]},docs))});
+test('rubric rejects scores without evidence and missing dimensions',()=>{const essay=read('essays')[0],text='Dùng mẫu số là lượt ghé.';const items=essay.criteria.map((_,i)=>({id:i+1,points:1,feedback:'Cần thêm phép tính.',quote:'lượt ghé'}));assert.equal(verifyGrade({items},essay,text).length,4);assert.throws(()=>verifyGrade({items:items.slice(1)},essay,text));assert.throws(()=>verifyGrade({items:items.map(x=>({...x,quote:'bịa'}))},essay,text))});

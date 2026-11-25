@@ -1,0 +1,3067 @@
+[
+ {
+  "id": "L001",
+  "track": "Python",
+  "title": "Loại giá trị thiếu",
+  "task": "Giữ các phần tử khác None theo thứ tự ban đầu.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return [i for i in x if i is not None]",
+  "tests": [
+   [
+    [
+     0,
+     null,
+     false,
+     2
+    ],
+    [
+     0,
+     false,
+     2
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L002",
+  "track": "Python",
+  "title": "Gỡ trùng có thứ tự",
+  "task": "Giữ lần xuất hiện đầu tiên của mỗi chuỗi.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return list(dict.fromkeys(x))",
+  "tests": [
+   [
+    [
+     "b",
+     "a",
+     "b"
+    ],
+    [
+     "b",
+     "a"
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L003",
+  "track": "Python",
+  "title": "Đếm từ",
+  "task": "Đếm tần suất từ sau khi chuyển chuỗi về chữ thường và tách theo khoảng trắng.",
+  "starter": "from collections import Counter\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "from collections import Counter\n\ndef solve(x):\n    return dict(Counter(x.lower().split()))",
+  "tests": [
+   [
+    "AI ai Lab",
+    {
+     "ai": 2,
+     "lab": 1
+    }
+   ],
+   [
+    "",
+    {}
+   ]
+  ]
+ },
+ {
+  "id": "L004",
+  "track": "Python",
+  "title": "Chuẩn hóa mã",
+  "task": "Xóa khoảng trắng hai đầu, viết hoa rồi nối các cụm bằng dấu gạch ngang.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return '-'.join(x.upper().split())",
+  "tests": [
+   [
+    "  ai   lab ",
+    "AI-LAB"
+   ],
+   [
+    " ",
+    ""
+   ]
+  ]
+ },
+ {
+  "id": "L005",
+  "track": "Python",
+  "title": "Tổng lũy kế",
+  "task": "Trả về tổng từ đầu đến mỗi vị trí.",
+  "starter": "from itertools import accumulate\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "from itertools import accumulate\n\ndef solve(x):\n    return list(accumulate(x))",
+  "tests": [
+   [
+    [
+     2,
+     -3,
+     4
+    ],
+    [
+     2,
+     -1,
+     3
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L006",
+  "track": "Python",
+  "title": "Chênh lệch liên tiếp",
+  "task": "Trả về hiệu phần tử sau trừ phần tử trước cho từng cặp liền kề.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return [b-a for a,b in zip(x,x[1:])]",
+  "tests": [
+   [
+    [
+     5,
+     2,
+     9
+    ],
+    [
+     -3,
+     7
+    ]
+   ],
+   [
+    [
+     1
+    ],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L007",
+  "track": "Python",
+  "title": "Giá trị thứ hai",
+  "task": "Trả số lớn thứ hai phân biệt, hoặc None nếu thiếu.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return sorted(set(x))[-2] if len(set(x))>1 else None",
+  "tests": [
+   [
+    [
+     4,
+     4,
+     1,
+     2
+    ],
+    2
+   ],
+   [
+    [
+     3,
+     3
+    ],
+    null
+   ]
+  ]
+ },
+ {
+  "id": "L008",
+  "track": "Python",
+  "title": "Làm phẳng một cấp",
+  "task": "Ghép các danh sách con theo đúng thứ tự.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return [v for row in x for v in row]",
+  "tests": [
+   [
+    [
+     [
+      1
+     ],
+     [],
+     [
+      2,
+      3
+     ]
+    ],
+    [
+     1,
+     2,
+     3
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L009",
+  "track": "Python",
+  "title": "Chia lô",
+  "task": "Chia danh sách thành lô tối đa ba phần tử.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return [x[i:i+3] for i in range(0,len(x),3)]",
+  "tests": [
+   [
+    [
+     1,
+     2,
+     3,
+     4
+    ],
+    [
+     [
+      1,
+      2,
+      3
+     ],
+     [
+      4
+     ]
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L010",
+  "track": "Python",
+  "title": "Chuyển vị bảng",
+  "task": "Chuyển hàng thành cột cho bảng chữ nhật; xuất list của list.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return [list(col) for col in zip(*x)]",
+  "tests": [
+   [
+    [
+     [
+      1,
+      2,
+      3
+     ],
+     [
+      4,
+      5,
+      6
+     ]
+    ],
+    [
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      5
+     ],
+     [
+      3,
+      6
+     ]
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L011",
+  "track": "Python",
+  "title": "Ngoặc cân bằng",
+  "task": "Chuỗi chỉ chứa ( và ). Kiểm tra mọi tiền tố và tổng cân bằng.",
+  "starter": "from itertools import accumulate\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "from itertools import accumulate\n\ndef solve(x):\n    return all(z>=0 for z in accumulate(1 if c=='(' else -1 for c in x)) and x.count('(')==x.count(')')",
+  "tests": [
+   [
+    "())(",
+    false
+   ],
+   [
+    "(())",
+    true
+   ]
+  ]
+ },
+ {
+  "id": "L012",
+  "track": "Python",
+  "title": "Chuỗi đối xứng",
+  "task": "Kiểm tra palindrome, bỏ ký tự ngoài chữ/số và không phân biệt hoa thường.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return (s:=''.join(c.lower() for c in x if c.isalnum()))==s[::-1]",
+  "tests": [
+   [
+    "A, b a",
+    true
+   ],
+   [
+    "abc",
+    false
+   ]
+  ]
+ },
+ {
+  "id": "L013",
+  "track": "Python",
+  "title": "Vị trí đầu tiên",
+  "task": "Đầu vào [danh sách, giá trị]. Trả chỉ số lần đầu, thiếu thì -1.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return x[0].index(x[1]) if x[1] in x[0] else -1",
+  "tests": [
+   [
+    [
+     [
+      4,
+      2,
+      2
+     ],
+     2
+    ],
+    1
+   ],
+   [
+    [
+     [],
+     3
+    ],
+    -1
+   ]
+  ]
+ },
+ {
+  "id": "L014",
+  "track": "Python",
+  "title": "Ghép khóa với giá trị",
+  "task": "Đầu vào gồm danh sách khóa và danh sách giá trị. Ghép tới độ dài ngắn hơn.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return dict(zip(*x))",
+  "tests": [
+   [
+    [
+     [
+      "a",
+      "b"
+     ],
+     [
+      7
+     ]
+    ],
+    {
+     "a": 7
+    }
+   ],
+   [
+    [
+     [],
+     []
+    ],
+    {}
+   ]
+  ]
+ },
+ {
+  "id": "L015",
+  "track": "Python",
+  "title": "Nhóm theo ký tự đầu",
+  "task": "Nhóm từ khác rỗng theo chữ cái đầu, giữ nguyên thứ tự trong nhóm.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return {k:[w for w in x if w.startswith(k)] for k in {w[0] for w in x if w}}",
+  "tests": [
+   [
+    [
+     "ai",
+     "an",
+     "lab",
+     ""
+    ],
+    {
+     "a": [
+      "ai",
+      "an"
+     ],
+     "l": [
+      "lab"
+     ]
+    }
+   ],
+   [
+    [],
+    {}
+   ]
+  ]
+ },
+ {
+  "id": "L016",
+  "track": "Python",
+  "title": "Chuỗi chạy dài nhất",
+  "task": "Trả độ dài dãy ký tự giống nhau liên tiếp dài nhất.",
+  "starter": "from itertools import groupby\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "from itertools import groupby\n\ndef solve(x):\n    return max((sum(1 for _ in g) for _,g in groupby(x)),default=0)",
+  "tests": [
+   [
+    "abbbaac",
+    3
+   ],
+   [
+    "",
+    0
+   ]
+  ]
+ },
+ {
+  "id": "L017",
+  "track": "Python",
+  "title": "Tìm số bị khuyết",
+  "task": "Danh sách chứa các số từ 0 đến n, thiếu đúng một số; n là độ dài list.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return len(x)*(len(x)+1)//2-sum(x)",
+  "tests": [
+   [
+    [
+     3,
+     0,
+     1
+    ],
+    2
+   ],
+   [
+    [],
+    0
+   ]
+  ]
+ },
+ {
+  "id": "L018",
+  "track": "Python",
+  "title": "Giao hai tập",
+  "task": "Hai dãy số có thể trùng. Trả các giá trị chung phân biệt, tăng dần.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return sorted(set(x[0]).intersection(x[1]))",
+  "tests": [
+   [
+    [
+     [
+      2,
+      2,
+      1
+     ],
+     [
+      3,
+      2
+     ]
+    ],
+    [
+     2
+    ]
+   ],
+   [
+    [
+     [],
+     [
+      1
+     ]
+    ],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L019",
+  "track": "Python",
+  "title": "Tích mọi phần tử",
+  "task": "Tính tích các số; quy ước tích rỗng là 1.",
+  "starter": "import math\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import math\n\ndef solve(x):\n    return math.prod(x)",
+  "tests": [
+   [
+    [
+     3,
+     -2,
+     4
+    ],
+    -24
+   ],
+   [
+    [],
+    1
+   ]
+  ]
+ },
+ {
+  "id": "L020",
+  "track": "Python",
+  "title": "Mã hóa độ dài",
+  "task": "Xuất từng nhóm ký tự liên tiếp thành cặp [ký tự, số lần].",
+  "starter": "from itertools import groupby\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "from itertools import groupby\n\ndef solve(x):\n    return [[k,len(list(g))] for k,g in groupby(x)]",
+  "tests": [
+   [
+    "aabba",
+    [
+     [
+      "a",
+      2
+     ],
+     [
+      "b",
+      2
+     ],
+     [
+      "a",
+      1
+     ]
+    ]
+   ],
+   [
+    "",
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L021",
+  "track": "Python",
+  "title": "Giải mã dãy",
+  "task": "Từ các cặp [ký tự, số lần] khôi phục chuỗi.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return ''.join(c*n for c,n in x)",
+  "tests": [
+   [
+    [
+     [
+      "a",
+      2
+     ],
+     [
+      "z",
+      0
+     ],
+     [
+      "b",
+      1
+     ]
+    ],
+    "aab"
+   ],
+   [
+    [],
+    ""
+   ]
+  ]
+ },
+ {
+  "id": "L022",
+  "track": "Python",
+  "title": "Sắp xếp ticket",
+  "task": "Sắp theo ưu tiên giảm dần, hòa giữ thứ tự cũ. Đầu vào từng cặp [tên, ưu tiên], trả danh sách tên.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return [r[0] for r in sorted(x,key=lambda r:-r[1])]",
+  "tests": [
+   [
+    [
+     [
+      "m",
+      1
+     ],
+     [
+      "b",
+      2
+     ],
+     [
+      "a",
+      2
+     ]
+    ],
+    [
+     "b",
+     "a",
+     "m"
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L023",
+  "track": "Python",
+  "title": "Trung bình có trọng số",
+  "task": "Mỗi cặp chứa giá trị và trọng số không âm. Tổng trọng số 0 trả None.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return sum(v*w for v,w in x)/sum(w for v,w in x) if sum(w for v,w in x) else None",
+  "tests": [
+   [
+    [
+     [
+      2,
+      1
+     ],
+     [
+      8,
+      2
+     ]
+    ],
+    6
+   ],
+   [
+    [
+     [
+      4,
+      0
+     ]
+    ],
+    null
+   ]
+  ]
+ },
+ {
+  "id": "L024",
+  "track": "Python",
+  "title": "Cửa sổ hai mẫu",
+  "task": "Tính trung bình trượt của từng hai giá trị liên tiếp.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return [(a+b)/2 for a,b in zip(x,x[1:])]",
+  "tests": [
+   [
+    [
+     2,
+     4,
+     8
+    ],
+    [
+     3,
+     6
+    ]
+   ],
+   [
+    [
+     9
+    ],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L025",
+  "track": "Python",
+  "title": "Tách train theo thời gian",
+  "task": "Chia danh sách đã xếp thời gian tại floor(0,8 × n). Trả [train,test].",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return [x[:len(x)*4//5],x[len(x)*4//5:]]",
+  "tests": [
+   [
+    [
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    [
+     [
+      1,
+      2,
+      3,
+      4
+     ],
+     [
+      5
+     ]
+    ]
+   ],
+   [
+    [
+     8
+    ],
+    [
+     [],
+     [
+      8
+     ]
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "L026",
+  "track": "Python",
+  "title": "Tính recall",
+  "task": "Đầu vào [TP,FN]. Trả None nếu không có mẫu dương.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return x[0]/sum(x) if sum(x) else None",
+  "tests": [
+   [
+    [
+     3,
+     1
+    ],
+    0.75
+   ],
+   [
+    [
+     0,
+     0
+    ],
+    null
+   ]
+  ]
+ },
+ {
+  "id": "L027",
+  "track": "Python",
+  "title": "Chi phí lỗi",
+  "task": "Đầu vào [FP,FN,cost_FP,cost_FN]. Tính tổng tổn thất.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return x[0]*x[2]+x[1]*x[3]",
+  "tests": [
+   [
+    [
+     2,
+     3,
+     1,
+     10
+    ],
+    32
+   ],
+   [
+    [
+     0,
+     0,
+     5,
+     4
+    ],
+    0
+   ]
+  ]
+ },
+ {
+  "id": "L028",
+  "track": "Python",
+  "title": "Tách tên miền",
+  "task": "Chuỗi email đơn giản có đúng một @. Trả tên miền viết thường.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return x.rsplit('@',1)[1].lower()",
+  "tests": [
+   [
+    "Mai@EXAMPLE.VN",
+    "example.vn"
+   ],
+   [
+    "a@b.io",
+    "b.io"
+   ]
+  ]
+ },
+ {
+  "id": "L029",
+  "track": "Python",
+  "title": "Kiểm tra schema",
+  "task": "Đầu vào [record,required]. Trả danh sách khóa bắt buộc còn thiếu đã sắp xếp.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return sorted(set(x[1])-set(x[0]))",
+  "tests": [
+   [
+    [
+     {
+      "a": null
+     },
+     [
+      "a",
+      "b"
+     ]
+    ],
+    [
+     "b"
+    ]
+   ],
+   [
+    [
+     {},
+     []
+    ],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L030",
+  "track": "Python",
+  "title": "Dịch vòng",
+  "task": "Đầu vào [dãy,k]. Xoay phải k vị trí với k không âm; giữ dãy rỗng.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return (x[0][-k:]+x[0][:-k]) if x[0] and (k:=x[1]%len(x[0])) else x[0]",
+  "tests": [
+   [
+    [
+     [
+      1,
+      2,
+      3
+     ],
+     4
+    ],
+    [
+     3,
+     1,
+     2
+    ]
+   ],
+   [
+    [
+     [],
+     9
+    ],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L031",
+  "track": "Python",
+  "title": "Cặp đạt mục tiêu",
+  "task": "Đầu vào [dãy,mục tiêu]. Kiểm tra tồn tại hai vị trí khác nhau có tổng bằng mục tiêu.",
+  "starter": "from itertools import combinations\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "from itertools import combinations\n\ndef solve(x):\n    return any(a+b==x[1] for a,b in combinations(x[0],2))",
+  "tests": [
+   [
+    [
+     [
+      3,
+      3
+     ],
+     6
+    ],
+    true
+   ],
+   [
+    [
+     [
+      3
+     ],
+     6
+    ],
+    false
+   ]
+  ]
+ },
+ {
+  "id": "L032",
+  "track": "Python",
+  "title": "Cân đối kho",
+  "task": "Mỗi cặp [mã,số lượng thay đổi]. Tổng hợp tồn cuối theo mã.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return {k:sum(n for i,n in x if i==k) for k,_ in x}",
+  "tests": [
+   [
+    [
+     [
+      "A",
+      5
+     ],
+     [
+      "B",
+      2
+     ],
+     [
+      "A",
+      -1
+     ]
+    ],
+    {
+     "A": 4,
+     "B": 2
+    }
+   ],
+   [
+    [],
+    {}
+   ]
+  ]
+ },
+ {
+  "id": "L033",
+  "track": "Python",
+  "title": "Giải nén ma trận đường chéo",
+  "task": "Dãy x chứa giá trị đường chéo. Tạo ma trận vuông với số 0 ngoài đường chéo.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return [[v if i==j else 0 for j in range(len(x))] for i,v in enumerate(x)]",
+  "tests": [
+   [
+    [
+     2,
+     4
+    ],
+    [
+     [
+      2,
+      0
+     ],
+     [
+      0,
+      4
+     ]
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L034",
+  "track": "Python",
+  "title": "Tìm đoạn văn liên quan",
+  "task": "Đầu vào [từ khóa,danh sách đoạn]. Trả chỉ số đoạn chứa nguyên từ khóa, tách theo khoảng trắng, bỏ hoa thường.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return [i for i,s in enumerate(x[1]) if x[0].lower() in s.lower().split()]",
+  "tests": [
+   [
+    [
+     "AI",
+     [
+      "AI lab",
+      "mail",
+      "ai"
+     ]
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   [
+    [
+     "a",
+     []
+    ],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L035",
+  "track": "Python",
+  "title": "Đánh giá top-k",
+  "task": "Đầu vào [xếp hạng, id đúng, k]. Trả 1 nếu id nằm trong top-k, ngược lại 0.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return int(x[1] in x[0][:x[2]])",
+  "tests": [
+   [
+    [
+     [
+      "b",
+      "a"
+     ],
+     "a",
+     1
+    ],
+    0
+   ],
+   [
+    [
+     [
+      "b",
+      "a"
+     ],
+     "a",
+     2
+    ],
+    1
+   ]
+  ]
+ },
+ {
+  "id": "L036",
+  "track": "Python",
+  "title": "Khoảng trống theo thời gian",
+  "task": "Với timestamp số nguyên tăng dần, trả chỉ số điểm bắt đầu phiên mới nếu cách điểm trước trên 30 phút; điểm đầu luôn mở phiên.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return [i for i,t in enumerate(x) if i==0 or t-x[i-1]>30]",
+  "tests": [
+   [
+    [
+     0,
+     30,
+     61,
+     62
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L037",
+  "track": "Python",
+  "title": "Top từ khóa",
+  "task": "Trả hai chuỗi phổ biến nhất, hòa thì xếp theo alphabet.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return sorted(set(x),key=lambda k:(-x.count(k),k))[:2]",
+  "tests": [
+   [
+    [
+     "c",
+     "a",
+     "b",
+     "c"
+    ],
+    [
+     "c",
+     "a"
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L038",
+  "track": "Python",
+  "title": "Độ sâu cây",
+  "task": "Cây là list lồng nhau, lá là số. Lá có độ sâu 0, list rỗng có độ sâu 1.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return 1+max((solve(v) for v in x),default=0) if isinstance(x,list) else 0",
+  "tests": [
+   [
+    [
+     1,
+     [
+      2,
+      [
+       3
+      ]
+     ]
+    ],
+    3
+   ],
+   [
+    [],
+    1
+   ]
+  ]
+ },
+ {
+  "id": "L039",
+  "track": "Python",
+  "title": "Biên tỷ suất",
+  "task": "Đầu vào [doanh thu,chi phí]. Trả biên lợi nhuận dạng tỷ lệ hoặc None khi doanh thu bằng 0.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return (x[0]-x[1])/x[0] if x[0] else None",
+  "tests": [
+   [
+    [
+     100,
+     80
+    ],
+    0.2
+   ],
+   [
+    [
+     0,
+     20
+    ],
+    null
+   ]
+  ]
+ },
+ {
+  "id": "L040",
+  "track": "Python",
+  "title": "Dòng hợp lệ",
+  "task": "Chỉ giữ dict có trường amount là int dương, loại Boolean.",
+  "starter": "def solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "def solve(x):\n    return [r for r in x if type(r.get('amount')) is int and r['amount']>0]",
+  "tests": [
+   [
+    [
+     {
+      "amount": true
+     },
+     {},
+     {
+      "amount": 2
+     }
+    ],
+    [
+     {
+      "amount": 2
+     }
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L041",
+  "track": "NumPy",
+  "title": "Tổng từng cột",
+  "task": "Đầu vào ma trận chữ nhật không rỗng. Cộng theo hàng để tạo tổng cho mỗi cột.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return np.asarray(x).sum(axis=0).tolist()",
+  "tests": [
+   [
+    [
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    [
+     4,
+     6
+    ]
+   ],
+   [
+    [
+     [
+      0,
+      -2
+     ]
+    ],
+    [
+     0,
+     -2
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "L042",
+  "track": "NumPy",
+  "title": "Cực đại từng hàng",
+  "task": "Trả giá trị lớn nhất của từng hàng ma trận không rỗng.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return np.max(x,axis=1).tolist()",
+  "tests": [
+   [
+    [
+     [
+      1,
+      4
+     ],
+     [
+      9,
+      2
+     ]
+    ],
+    [
+     4,
+     9
+    ]
+   ],
+   [
+    [
+     [
+      -2,
+      -4
+     ]
+    ],
+    [
+     -2
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "L043",
+  "track": "NumPy",
+  "title": "Tâm hóa hàng",
+  "task": "Trừ trung bình hàng khỏi từng phần tử.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return (np.array(x)-np.mean(x,axis=1,keepdims=True)).tolist()",
+  "tests": [
+   [
+    [
+     [
+      1,
+      3
+     ],
+     [
+      4,
+      4
+     ]
+    ],
+    [
+     [
+      -1,
+      1
+     ],
+     [
+      0,
+      0
+     ]
+    ]
+   ],
+   [
+    [
+     [
+      5
+     ]
+    ],
+    [
+     [
+      0
+     ]
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "L044",
+  "track": "NumPy",
+  "title": "Kẹp biên",
+  "task": "Giới hạn giá trị vào đoạn [0,1].",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return np.clip(x,0,1).tolist()",
+  "tests": [
+   [
+    [
+     -2,
+     0.4,
+     3
+    ],
+    [
+     0,
+     0.4,
+     1
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L045",
+  "track": "NumPy",
+  "title": "Bình phương chuẩn",
+  "task": "Tính bình phương chuẩn Euclid của vector một chiều.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return float(np.dot(x,x))",
+  "tests": [
+   [
+    [
+     3,
+     4
+    ],
+    25
+   ],
+   [
+    [],
+    0
+   ]
+  ]
+ },
+ {
+  "id": "L046",
+  "track": "NumPy",
+  "title": "Chuẩn hóa min-max",
+  "task": "Ánh xạ vector không rỗng vào [0,1]. Dãy hằng trả toàn 0.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return ((np.array(x)-min(x))/(max(x)-min(x))).tolist() if max(x)!=min(x) else [0]*len(x)",
+  "tests": [
+   [
+    [
+     2,
+     4,
+     6
+    ],
+    [
+     0,
+     0.5,
+     1
+    ]
+   ],
+   [
+    [
+     7,
+     7
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "L047",
+  "track": "NumPy",
+  "title": "Nhãn dự đoán",
+  "task": "Cho từng hàng xác suất, trả chỉ số lớn nhất; hòa chọn vị trí đầu.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return np.argmax(x,axis=1).tolist()",
+  "tests": [
+   [
+    [
+     [
+      0.2,
+      0.8
+     ],
+     [
+      0.5,
+      0.5
+     ]
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   [
+    [
+     [
+      1
+     ]
+    ],
+    [
+     0
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "L048",
+  "track": "NumPy",
+  "title": "Đếm ô âm",
+  "task": "Đếm số ô nhỏ hơn 0 trong tensor.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return int(np.count_nonzero(np.array(x)<0))",
+  "tests": [
+   [
+    [
+     [
+      1,
+      -1
+     ],
+     [
+      -2,
+      0
+     ]
+    ],
+    2
+   ],
+   [
+    [],
+    0
+   ]
+  ]
+ },
+ {
+  "id": "L049",
+  "track": "NumPy",
+  "title": "Lọc theo mask",
+  "task": "Đầu vào [values, mask] cùng độ dài, mask Boolean. Trả các giá trị được giữ.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return np.array(x[0])[np.asarray(x[1],dtype=bool)].tolist()",
+  "tests": [
+   [
+    [
+     [
+      4,
+      5,
+      6
+     ],
+     [
+      true,
+      false,
+      true
+     ]
+    ],
+    [
+     4,
+     6
+    ]
+   ],
+   [
+    [
+     [],
+     []
+    ],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L050",
+  "track": "NumPy",
+  "title": "Lấy đường chéo",
+  "task": "Trả đường chéo chính của ma trận chữ nhật.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return np.diagonal(x).tolist()",
+  "tests": [
+   [
+    [
+     [
+      1,
+      2,
+      3
+     ],
+     [
+      4,
+      5,
+      6
+     ]
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   [
+    [
+     [
+      7
+     ],
+     [
+      8
+     ]
+    ],
+    [
+     7
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "L051",
+  "track": "NumPy",
+  "title": "Tích ma trận",
+  "task": "Nhận [A,B] có shape tương thích. Trả A nhân B theo đại số tuyến tính.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return np.matmul(x[0],x[1]).tolist()",
+  "tests": [
+   [
+    [
+     [
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      [
+       3
+      ],
+      [
+       4
+      ]
+     ]
+    ],
+    [
+     [
+      11
+     ]
+    ]
+   ],
+   [
+    [
+     [
+      [
+       0
+      ]
+     ],
+     [
+      [
+       9
+      ]
+     ]
+    ],
+    [
+     [
+      0
+     ]
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "L052",
+  "track": "NumPy",
+  "title": "Vết ma trận",
+  "task": "Trả tổng đường chéo chính của ma trận vuông.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return int(np.trace(x))",
+  "tests": [
+   [
+    [
+     [
+      1,
+      8
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    5
+   ],
+   [
+    [
+     [
+      0
+     ]
+    ],
+    0
+   ]
+  ]
+ },
+ {
+  "id": "L053",
+  "track": "NumPy",
+  "title": "One-hot",
+  "task": "Mã hóa nhãn thuộc 0,1,2 thành ma trận one-hot ba cột.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return np.eye(3,dtype=int)[np.array(x,dtype=int)].tolist()",
+  "tests": [
+   [
+    [
+     2,
+     0
+    ],
+    [
+     [
+      0,
+      0,
+      1
+     ],
+     [
+      1,
+      0,
+      0
+     ]
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L054",
+  "track": "NumPy",
+  "title": "Lỗi tuyệt đối trung bình",
+  "task": "Nhận [y_true,y_pred] không rỗng cùng độ dài. Tính MAE.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return float(np.mean(np.abs(np.subtract(*x))))",
+  "tests": [
+   [
+    [
+     [
+      1,
+      4
+     ],
+     [
+      3,
+      5
+     ]
+    ],
+    1.5
+   ],
+   [
+    [
+     [
+      2
+     ],
+     [
+      2
+     ]
+    ],
+    0
+   ]
+  ]
+ },
+ {
+  "id": "L055",
+  "track": "NumPy",
+  "title": "Sai số RMS",
+  "task": "Trả căn bậc hai của sai số bình phương trung bình với [thật,dự đoán].",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return float(np.sqrt(np.mean(np.subtract(*x)**2)))",
+  "tests": [
+   [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      3,
+      3
+     ]
+    ],
+    3
+   ],
+   [
+    [
+     [
+      8
+     ],
+     [
+      8
+     ]
+    ],
+    0
+   ]
+  ]
+ },
+ {
+  "id": "L056",
+  "track": "NumPy",
+  "title": "Logit ổn định",
+  "task": "Tính softmax vector không rỗng bằng cách trừ giá trị lớn nhất trước khi lấy exp.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return (np.exp(np.array(x)-np.max(x))/np.exp(np.array(x)-np.max(x)).sum()).tolist()",
+  "tests": [
+   [
+    [
+     1000,
+     1000
+    ],
+    [
+     0.5,
+     0.5
+    ]
+   ],
+   [
+    [
+     20
+    ],
+    [
+     1
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "L057",
+  "track": "NumPy",
+  "title": "Khoảng cách L1",
+  "task": "Tính khoảng cách Manhattan giữa hai vector có cùng kích thước.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return float(np.abs(np.subtract(*x)).sum())",
+  "tests": [
+   [
+    [
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      1
+     ]
+    ],
+    7
+   ],
+   [
+    [
+     [],
+     []
+    ],
+    0
+   ]
+  ]
+ },
+ {
+  "id": "L058",
+  "track": "NumPy",
+  "title": "Xếp hạng ổn định",
+  "task": "Trả chỉ số theo giá trị tăng dần, giá trị bằng nhau giữ thứ tự.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return np.argsort(x,kind='stable').tolist()",
+  "tests": [
+   [
+    [
+     3,
+     1,
+     1
+    ],
+    [
+     1,
+     2,
+     0
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L059",
+  "track": "NumPy",
+  "title": "Tích lũy theo cột",
+  "task": "Tạo ma trận tổng tích lũy theo chiều dọc.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return np.cumsum(x,axis=0).tolist()",
+  "tests": [
+   [
+    [
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    [
+     [
+      1,
+      2
+     ],
+     [
+      4,
+      6
+     ]
+    ]
+   ],
+   [
+    [
+     [
+      3
+     ]
+    ],
+    [
+     [
+      3
+     ]
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "L060",
+  "track": "NumPy",
+  "title": "Lọc hàng đầy đủ",
+  "task": "Đầu vào list hàng với None là thiếu. Chỉ giữ hàng không thiếu giá trị.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return (a:=np.asarray(x,dtype=float))[~np.isnan(a).any(axis=1)].tolist()",
+  "tests": [
+   [
+    [
+     [
+      1,
+      null
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    [
+     [
+      2,
+      3
+     ]
+    ]
+   ],
+   [
+    [
+     [
+      null,
+      null
+     ]
+    ],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L061",
+  "track": "NumPy",
+  "title": "Đổi layout",
+  "task": "Làm phẳng ma trận theo thứ tự cột.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return np.asarray(x).ravel(order='F').tolist()",
+  "tests": [
+   [
+    [
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    [
+     1,
+     3,
+     2,
+     4
+    ]
+   ],
+   [
+    [
+     [
+      5
+     ]
+    ],
+    [
+     5
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "L062",
+  "track": "NumPy",
+  "title": "Trải feature",
+  "task": "Đầu vào ma trận, lặp mỗi cột hai lần kề nhau.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return np.repeat(x,2,axis=1).tolist()",
+  "tests": [
+   [
+    [
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    [
+     [
+      1,
+      1,
+      2,
+      2
+     ],
+     [
+      3,
+      3,
+      4,
+      4
+     ]
+    ]
+   ],
+   [
+    [
+     [
+      0
+     ]
+    ],
+    [
+     [
+      0,
+      0
+     ]
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "L063",
+  "track": "NumPy",
+  "title": "Chuẩn vô cùng",
+  "task": "Tìm độ lớn tuyệt đối lớn nhất của vector, rỗng trả 0.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return float(np.max(np.abs(x),initial=0))",
+  "tests": [
+   [
+    [
+     -8,
+     3
+    ],
+    8
+   ],
+   [
+    [],
+    0
+   ]
+  ]
+ },
+ {
+  "id": "L064",
+  "track": "NumPy",
+  "title": "Đếm nhãn",
+  "task": "Đầu vào nhãn nguyên 0 đến 2. Trả số mẫu cho từng lớp theo thứ tự.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return np.bincount(np.asarray(x,dtype=int),minlength=3).tolist()",
+  "tests": [
+   [
+    [
+     2,
+     0,
+     2
+    ],
+    [
+     1,
+     0,
+     2
+    ]
+   ],
+   [
+    [],
+    [
+     0,
+     0,
+     0
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "L065",
+  "track": "NumPy",
+  "title": "Phân vị giữa",
+  "task": "Trả trung vị vector hữu hạn không rỗng.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return float(np.median(x))",
+  "tests": [
+   [
+    [
+     9,
+     1,
+     3,
+     5
+    ],
+    4
+   ],
+   [
+    [
+     2
+    ],
+    2
+   ]
+  ]
+ },
+ {
+  "id": "L066",
+  "track": "NumPy",
+  "title": "Tạo lưới mẫu",
+  "task": "Nhận [đầu, cuối, n]. Tạo n giá trị cách đều gồm cả hai đầu với n >= 2.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return np.linspace(*x).tolist()",
+  "tests": [
+   [
+    [
+     0,
+     1,
+     3
+    ],
+    [
+     0,
+     0.5,
+     1
+    ]
+   ],
+   [
+    [
+     4,
+     4,
+     2
+    ],
+    [
+     4,
+     4
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "L067",
+  "track": "NumPy",
+  "title": "Chặn tam giác dưới",
+  "task": "Giữ đường chéo và vùng trên đường chéo, vùng dưới bằng 0.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return np.triu(x).tolist()",
+  "tests": [
+   [
+    [
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    [
+     [
+      1,
+      2
+     ],
+     [
+      0,
+      4
+     ]
+    ]
+   ],
+   [
+    [
+     [
+      5
+     ]
+    ],
+    [
+     [
+      5
+     ]
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "L068",
+  "track": "NumPy",
+  "title": "Nhân trọng số cột",
+  "task": "Đầu vào [ma trận,vector trọng số cột]. Nhân từng cột với trọng số tương ứng.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return (np.asarray(x[0])*x[1]).tolist()",
+  "tests": [
+   [
+    [
+     [
+      [
+       1,
+       2
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    [
+     [
+      2,
+      6
+     ],
+     [
+      6,
+      12
+     ]
+    ]
+   ],
+   [
+    [
+     [
+      [
+       9
+      ]
+     ],
+     [
+      0
+     ]
+    ],
+    [
+     [
+      0
+     ]
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "L069",
+  "track": "NumPy",
+  "title": "Kiểm tra gần bằng",
+  "task": "Nhận hai vector số cùng kích thước. Kiểm tra sai khác tuyệt đối từng cặp tối đa 0,001.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return bool(np.allclose(*x,atol=0.001,rtol=0))",
+  "tests": [
+   [
+    [
+     [
+      0
+     ],
+     [
+      0.0009
+     ]
+    ],
+    true
+   ],
+   [
+    [
+     [
+      100000
+     ],
+     [
+      100001
+     ]
+    ],
+    false
+   ]
+  ]
+ },
+ {
+  "id": "L070",
+  "track": "NumPy",
+  "title": "Gradient sai số",
+  "task": "Với loss trung bình (pred−true)², trả đạo hàm theo mỗi pred. Đầu vào [pred,true] không rỗng.",
+  "starter": "import numpy as np\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import numpy as np\n\ndef solve(x):\n    return (2*np.subtract(*x)/len(x[0])).tolist()",
+  "tests": [
+   [
+    [
+     [
+      3,
+      1
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    [
+     2,
+     -1
+    ]
+   ],
+   [
+    [
+     [
+      4
+     ],
+     [
+      4
+     ]
+    ],
+    [
+     0
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "L071",
+  "track": "Pandas",
+  "title": "Điền số thiếu",
+  "task": "Với Series số có ít nhất một quan sát, thay giá trị thiếu bằng trung vị.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return (s:=pd.Series(x)).fillna(s.median()).tolist()",
+  "tests": [
+   [
+    [
+     1,
+     null,
+     3
+    ],
+    [
+     1,
+     2,
+     3
+    ]
+   ],
+   [
+    [
+     5
+    ],
+    [
+     5
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "L072",
+  "track": "Pandas",
+  "title": "Mã khách hợp lệ",
+  "task": "Bỏ giá trị thiếu rồi bỏ khoảng trắng ở hai đầu mỗi mã chuỗi.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return pd.Series(x,dtype='string').dropna().str.strip().tolist()",
+  "tests": [
+   [
+    [
+     " 01 ",
+     null,
+     "07"
+    ],
+    [
+     "01",
+     "07"
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L073",
+  "track": "Pandas",
+  "title": "Giữ cập nhật cuối",
+  "task": "Mỗi hàng có id và v, đã xếp theo thời gian. Giữ v cuối cho mỗi id, theo thứ tự của các hàng được giữ.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return pd.DataFrame(x).drop_duplicates('id',keep='last').v.tolist()",
+  "tests": [
+   [
+    [
+     {
+      "id": "a",
+      "v": 1
+     },
+     {
+      "id": "b",
+      "v": 2
+     },
+     {
+      "id": "a",
+      "v": 3
+     }
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   [
+    [
+     {
+      "id": "a",
+      "v": 0
+     }
+    ],
+    [
+     0
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "L074",
+  "track": "Pandas",
+  "title": "Doanh thu theo kênh",
+  "task": "Đầu vào cặp [kênh,doanh thu]. Trả dict tổng theo kênh.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return pd.DataFrame(x,columns=['k','v']).groupby('k').v.sum().to_dict()",
+  "tests": [
+   [
+    [
+     [
+      "web",
+      3
+     ],
+     [
+      "shop",
+      2
+     ],
+     [
+      "web",
+      4
+     ]
+    ],
+    {
+     "web": 7,
+     "shop": 2
+    }
+   ],
+   [
+    [],
+    {}
+   ]
+  ]
+ },
+ {
+  "id": "L075",
+  "track": "Pandas",
+  "title": "Đếm số khách",
+  "task": "Mỗi hàng [kênh,mã khách]. Đếm mã khác nhau trong từng kênh, bỏ mã thiếu.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return pd.DataFrame(x,columns=['k','v']).groupby('k').v.nunique().to_dict()",
+  "tests": [
+   [
+    [
+     [
+      "w",
+      "a"
+     ],
+     [
+      "w",
+      "a"
+     ],
+     [
+      "s",
+      null
+     ]
+    ],
+    {
+     "w": 1,
+     "s": 0
+    }
+   ],
+   [
+    [],
+    {}
+   ]
+  ]
+ },
+ {
+  "id": "L076",
+  "track": "Pandas",
+  "title": "Lọc doanh thu",
+  "task": "Giữ các giá trị số lớn hơn 100, loại None.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return (s:=pd.Series(x,dtype=float))[s.gt(100)].tolist()",
+  "tests": [
+   [
+    [
+     100,
+     101,
+     null,
+     120
+    ],
+    [
+     101,
+     120
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L077",
+  "track": "Pandas",
+  "title": "Đổi số an toàn",
+  "task": "Chuyển chuỗi sang số; giá trị không phân tích được thay bằng 0.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return pd.to_numeric(pd.Series(x),errors='coerce').fillna(0).tolist()",
+  "tests": [
+   [
+    [
+     "3",
+     "?",
+     null
+    ],
+    [
+     3,
+     0,
+     0
+    ]
+   ],
+   [
+    [
+     "0"
+    ],
+    [
+     0
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "L078",
+  "track": "Pandas",
+  "title": "Điền tiến",
+  "task": "Điền giá trị đã biết gần nhất từ trước, khoảng trống đầu chuỗi thay 0.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return pd.Series(x,dtype=float).ffill().fillna(0).tolist()",
+  "tests": [
+   [
+    [
+     null,
+     2,
+     null,
+     3
+    ],
+    [
+     0,
+     2,
+     2,
+     3
+    ]
+   ],
+   [
+    [
+     null
+    ],
+    [
+     0
+    ]
+   ]
+  ]
+ },
+ {
+  "id": "L079",
+  "track": "Pandas",
+  "title": "Ngày trong tuần",
+  "task": "Đổi danh sách ngày ISO hợp lệ sang số thứ trong tuần, thứ hai bằng 0.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return pd.to_datetime(pd.Series(x,dtype=str)).dt.dayofweek.tolist()",
+  "tests": [
+   [
+    [
+     "2024-01-01",
+     "2024-01-07"
+    ],
+    [
+     0,
+     6
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L080",
+  "track": "Pandas",
+  "title": "Tổng theo tháng",
+  "task": "Mỗi hàng [ngày ISO,số tiền]. Tổng hợp theo khóa YYYY-MM.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return (d:=pd.DataFrame(x,columns=['date','v'])).groupby(d.date.str.slice(0,7)).v.sum().to_dict() if x else {}",
+  "tests": [
+   [
+    [
+     [
+      "2024-01-01",
+      2
+     ],
+     [
+      "2024-01-31",
+      3
+     ],
+     [
+      "2024-02-01",
+      4
+     ]
+    ],
+    {
+     "2024-01": 5,
+     "2024-02": 4
+    }
+   ],
+   [
+    [],
+    {}
+   ]
+  ]
+ },
+ {
+  "id": "L081",
+  "track": "Pandas",
+  "title": "Trung bình nhóm trên từng hàng",
+  "task": "Mỗi hàng [nhóm,v]. Trả trung bình của nhóm ở đúng thứ tự hàng gốc.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return pd.DataFrame(x,columns=['k','v']).groupby('k').v.transform('mean').tolist()",
+  "tests": [
+   [
+    [
+     [
+      "a",
+      1
+     ],
+     [
+      "b",
+      8
+     ],
+     [
+      "a",
+      5
+     ]
+    ],
+    [
+     3,
+     8,
+     3
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L082",
+  "track": "Pandas",
+  "title": "Xếp hạng đồng hạng",
+  "task": "Giá trị cao nhất xếp hạng 1; hạng kế tiếp tăng 1 sau mỗi giá trị phân biệt.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return pd.Series(x,dtype=float).rank(method='dense',ascending=False).tolist()",
+  "tests": [
+   [
+    [
+     7,
+     9,
+     7,
+     3
+    ],
+    [
+     2,
+     1,
+     2,
+     3
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L083",
+  "track": "Pandas",
+  "title": "Tỷ lệ thiếu theo cột",
+  "task": "Đầu vào các record có cùng khóa. Trả tỷ lệ thiếu của mỗi cột.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return pd.DataFrame(x).isna().mean().to_dict()",
+  "tests": [
+   [
+    [
+     {
+      "a": 1,
+      "b": null
+     },
+     {
+      "a": null,
+      "b": null
+     }
+    ],
+    {
+     "a": 0.5,
+     "b": 1
+    }
+   ],
+   [
+    [],
+    {}
+   ]
+  ]
+ },
+ {
+  "id": "L084",
+  "track": "Pandas",
+  "title": "Độ dài văn bản",
+  "task": "Trả số ký tự từng chuỗi, thiếu xem như chuỗi rỗng.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return pd.Series(x,dtype='string').fillna('').str.len().tolist()",
+  "tests": [
+   [
+    [
+     "AI",
+     null,
+     "dữ"
+    ],
+    [
+     2,
+     0,
+     2
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L085",
+  "track": "Pandas",
+  "title": "Bảng tra cứu",
+  "task": "Nhận [danh sách mã, dict giá]. Trả giá theo thứ tự; mã thiếu trong bảng giá trả -1.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return pd.Series(x[0],dtype=str).map(x[1]).fillna(-1).tolist()",
+  "tests": [
+   [
+    [
+     [
+      "a",
+      "z",
+      "a"
+     ],
+     {
+      "a": 3
+     }
+    ],
+    [
+     3,
+     -1,
+     3
+    ]
+   ],
+   [
+    [
+     [],
+     {}
+    ],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L086",
+  "track": "Pandas",
+  "title": "Đếm bản ghi lặp",
+  "task": "Trả số hàng trùng hoàn toàn ngoài lần xuất hiện đầu.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return int(pd.DataFrame(x).duplicated().sum())",
+  "tests": [
+   [
+    [
+     {
+      "a": 1
+     },
+     {
+      "a": 1
+     },
+     {
+      "a": 2
+     }
+    ],
+    1
+   ],
+   [
+    [],
+    0
+   ]
+  ]
+ },
+ {
+  "id": "L087",
+  "track": "Pandas",
+  "title": "Lọc tiền tố",
+  "task": "Giữ chuỗi bắt đầu bằng mã VN-, bỏ giá trị thiếu.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return (s:=pd.Series(x,dtype='string'))[s.str.startswith('VN-',na=False)].tolist()",
+  "tests": [
+   [
+    [
+     "VN-01",
+     "vn-03",
+     null
+    ],
+    [
+     "VN-01"
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L088",
+  "track": "Pandas",
+  "title": "Cộng dồn trong nhóm",
+  "task": "Từng hàng [khách,v]. Tính tổng mua lũy kế của khách tại mỗi hàng.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return pd.DataFrame(x,columns=['k','v']).groupby('k').v.cumsum().tolist() if x else []",
+  "tests": [
+   [
+    [
+     [
+      "a",
+      2
+     ],
+     [
+      "b",
+      4
+     ],
+     [
+      "a",
+      3
+     ]
+    ],
+    [
+     2,
+     4,
+     5
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L089",
+  "track": "Pandas",
+  "title": "Tách nhãn",
+  "task": "Đầu vào list chuỗi tag phân tách bởi dấu phẩy. Tách thành list phẳng, bỏ chuỗi rỗng và bỏ khoảng trắng.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return [v for v in pd.Series(x,dtype='string').str.split(',').explode().dropna().str.strip() if v]",
+  "tests": [
+   [
+    [
+     " ai, ml",
+     "",
+     "sql"
+    ],
+    [
+     "ai",
+     "ml",
+     "sql"
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L090",
+  "track": "Pandas",
+  "title": "Lọc IQR",
+  "task": "Trả các giá trị nằm ngoài biên Tukey Q1−1,5 IQR hoặc Q3+1,5 IQR; dùng nội suy tuyến tính.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return (s:=pd.Series(x,dtype=float))[(s<s.quantile(.25)-1.5*(s.quantile(.75)-s.quantile(.25)))+(s>s.quantile(.75)+1.5*(s.quantile(.75)-s.quantile(.25)))].tolist()",
+  "tests": [
+   [
+    [
+     1,
+     1,
+     2,
+     2,
+     99
+    ],
+    [
+     99
+    ]
+   ],
+   [
+    [
+     3,
+     3
+    ],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L091",
+  "track": "Pandas",
+  "title": "Biến động phần trăm",
+  "task": "Dãy dương không rỗng. Tính thay đổi tương đối so với kỳ trước, bỏ kỳ đầu.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return pd.Series(x).pct_change().iloc[1:].tolist()",
+  "tests": [
+   [
+    [
+     4,
+     6,
+     3
+    ],
+    [
+     0.5,
+     -0.5
+    ]
+   ],
+   [
+    [
+     1
+    ],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L092",
+  "track": "Pandas",
+  "title": "Cửa sổ ba ngày",
+  "task": "Tính tổng rolling 3 quan sát, đầu chuỗi dùng số quan sát hiện có.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return pd.Series(x,dtype=float).rolling(3,min_periods=1).sum().tolist()",
+  "tests": [
+   [
+    [
+     1,
+     2,
+     3,
+     4
+    ],
+    [
+     1,
+     3,
+     6,
+     9
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L093",
+  "track": "Pandas",
+  "title": "Nối bảng dọc",
+  "task": "Đầu vào [bảng 1,bảng 2], cùng schema. Nối các hàng theo thứ tự và trả list record.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return pd.concat([pd.DataFrame(r) for r in x],ignore_index=True).to_dict('records')",
+  "tests": [
+   [
+    [
+     [
+      {
+       "id": 1
+      }
+     ],
+     [
+      {
+       "id": 2
+      }
+     ]
+    ],
+    [
+     {
+      "id": 1
+     },
+     {
+      "id": 2
+     }
+    ]
+   ],
+   [
+    [
+     [],
+     []
+    ],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L094",
+  "track": "Pandas",
+  "title": "Tìm khách chưa mua",
+  "task": "Đầu vào [mã khách,mã có đơn]. Giữ các mã trong danh sách đầu chưa xuất hiện ở danh sách sau.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return (s:=pd.Series(x[0],dtype=str))[~s.isin(x[1])].tolist()",
+  "tests": [
+   [
+    [
+     [
+      "a",
+      "b",
+      "c"
+     ],
+     [
+      "c",
+      "a"
+     ]
+    ],
+    [
+     "b"
+    ]
+   ],
+   [
+    [
+     [],
+     []
+    ],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L095",
+  "track": "Pandas",
+  "title": "Giờ UTC",
+  "task": "Đổi timestamp ISO có offset thành giờ UTC (0–23).",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return pd.to_datetime(pd.Series(x,dtype=str),utc=True).dt.hour.tolist()",
+  "tests": [
+   [
+    [
+     "2024-01-01T07:00:00+07:00"
+    ],
+    [
+     0
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L096",
+  "track": "Pandas",
+  "title": "Chuẩn hóa khoảng trắng",
+  "task": "Thay mọi chuỗi khoảng trắng bằng một dấu cách và bỏ khoảng trắng ở hai đầu.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return pd.Series(x,dtype='string').str.split().str.join(' ').tolist()",
+  "tests": [
+   [
+    [
+     "  AI   lab ",
+     "x"
+    ],
+    [
+     "AI lab",
+     "x"
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L097",
+  "track": "Pandas",
+  "title": "Chênh lệch nhóm",
+  "task": "Đầu vào từng cặp [nhóm,v]. Trả chênh lệch so với hàng trước cùng nhóm; lần đầu trả 0.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return pd.DataFrame(x,columns=['k','v']).groupby('k').v.diff().fillna(0).tolist()",
+  "tests": [
+   [
+    [
+     [
+      "a",
+      2
+     ],
+     [
+      "b",
+      8
+     ],
+     [
+      "a",
+      5
+     ]
+    ],
+    [
+     0,
+     0,
+     3
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L098",
+  "track": "Pandas",
+  "title": "Kỷ lục đến hiện tại",
+  "task": "Trả giá trị lớn nhất đã quan sát tính đến từng hàng.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return pd.Series(x,dtype=float).cummax().tolist()",
+  "tests": [
+   [
+    [
+     3,
+     1,
+     4,
+     2
+    ],
+    [
+     3,
+     3,
+     4,
+     4
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L099",
+  "track": "Pandas",
+  "title": "Tỷ trọng nhóm",
+  "task": "Mỗi hàng [nhóm,v] có v dương. Trả tỷ lệ v trong tổng nhóm theo thứ tự ban đầu.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return (d.v/d.groupby('k').v.transform('sum')).tolist() if len(d:=pd.DataFrame(x,columns=['k','v'])) else []",
+  "tests": [
+   [
+    [
+     [
+      "a",
+      1
+     ],
+     [
+      "b",
+      5
+     ],
+     [
+      "a",
+      3
+     ]
+    ],
+    [
+     0.25,
+     1,
+     0.75
+    ]
+   ],
+   [
+    [],
+    []
+   ]
+  ]
+ },
+ {
+  "id": "L100",
+  "track": "Pandas",
+  "title": "Lọc ngày hợp lệ",
+  "task": "Danh sách ngày ISO hoặc chuỗi sai định dạng. Đếm số giá trị chuyển được thành ngày hợp lệ.",
+  "starter": "import pandas as pd\n\ndef solve(x):\n    # Viết lời giải tại đây\n    pass",
+  "solution": "import pandas as pd\n\ndef solve(x):\n    return int(pd.to_datetime(pd.Series(x,dtype=str),format='%Y-%m-%d',errors='coerce').notna().sum())",
+  "tests": [
+   [
+    [
+     "2024-02-29",
+     "2023-02-29",
+     "?"
+    ],
+    1
+   ],
+   [
+    [],
+    0
+   ]
+  ]
+ }
+]

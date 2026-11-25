@@ -1,0 +1,5842 @@
+[
+ {
+  "id": "B001",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "Python",
+  "prompt": "Sau a=[1]; b=a; b.append(2), a bằng gì?",
+  "options": [
+   "[1]",
+   "None",
+   "[1, 2]"
+  ],
+  "reasons": [
+   "Phép gán không tạo bản sao.",
+   "append trả về None nhưng a không nhận giá trị trả về.",
+   "a và b cùng trỏ tới một list; append thay đổi đối tượng tại chỗ."
+  ],
+  "key": 2,
+  "level": 3,
+  "type": "Một lựa chọn",
+  "skill": "Python",
+  "tags": [
+   "Python",
+   "B"
+  ],
+  "seconds": 90,
+  "related": "Python",
+  "version": "1.0",
+  "status": "Biên soạn nội bộ",
+  "source": "https://docs.python.org/3/tutorial/"
+ },
+ {
+  "id": "B002",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "Python",
+  "prompt": "Điều gì xảy ra với danh sách mặc định trong def add(x, buf=[]), nếu hàm append x vào buf và được gọi nhiều lần không truyền buf?",
+  "options": [
+   "Python cấm list mặc định",
+   "Dữ liệu tích lũy giữa các lần gọi",
+   "List mới được tạo mỗi lần gọi"
+  ],
+  "reasons": [
+   "Cú pháp hợp lệ dù dễ gây lỗi.",
+   "Đối số mặc định được tạo khi định nghĩa hàm; dùng None để tạo list mới trong thân hàm.",
+   "Điều này chỉ xảy ra nếu khởi tạo trong thân hàm."
+  ],
+  "key": 1,
+  "level": 4,
+  "type": "Một lựa chọn",
+  "skill": "Python",
+  "tags": [
+   "Python",
+   "B"
+  ],
+  "seconds": 90,
+  "related": "Python",
+  "version": "1.0",
+  "status": "Biên soạn nội bộ",
+  "source": "https://docs.python.org/3/tutorial/"
+ },
+ {
+  "id": "B003",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "NumPy",
+  "prompt": "Với a=np.array([[1,2],[3,4]]), a.sum(axis=0).tolist() cho kết quả nào?",
+  "options": [
+   "[4, 6]",
+   "[3, 7]",
+   "10"
+  ],
+  "reasons": [
+   "Trục hàng bị thu gọn; mỗi kết quả cộng các hàng trong cùng một cột.",
+   "Đây là tổng theo axis=1.",
+   "Đây là tổng trên tất cả trục."
+  ],
+  "key": 0,
+  "level": 2,
+  "type": "Một lựa chọn",
+  "skill": "NumPy",
+  "tags": [
+   "NumPy",
+   "B"
+  ],
+  "seconds": 90,
+  "related": "NumPy",
+  "version": "1.0",
+  "status": "Biên soạn nội bộ",
+  "source": "https://numpy.org/doc/stable/"
+ },
+ {
+  "id": "B004",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "NumPy",
+  "prompt": "Muốn trừ trung bình riêng của mỗi hàng trong X có shape (12,5). Biểu thức phù hợp?",
+  "options": [
+   "X - X.mean(axis=1)",
+   "X - X.mean(axis=0)",
+   "X - X.mean(axis=1, keepdims=True)"
+  ],
+  "reasons": [
+   "Shape (12,) không khớp chiều cuối 5.",
+   "Đây là tâm hóa theo cột.",
+   "Giữ chiều đơn tạo shape (12,1) để broadcast theo cột."
+  ],
+  "key": 2,
+  "level": 3,
+  "type": "Một lựa chọn",
+  "skill": "NumPy",
+  "tags": [
+   "NumPy",
+   "B"
+  ],
+  "seconds": 90,
+  "related": "NumPy",
+  "version": "1.0",
+  "status": "Biên soạn nội bộ",
+  "source": "https://numpy.org/doc/stable/"
+ },
+ {
+  "id": "B005",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "Pandas",
+  "prompt": "Sau left merge, bảng đơn hàng tăng từ 100 lên 120 dòng. Nên kiểm tra gì trước?",
+  "options": [
+   "Kiểu ngày ở cột không dùng nối",
+   "Khóa nối trùng phía bảng tra cứu",
+   "Thiếu index liên tục"
+  ],
+  "reasons": [
+   "Không chi phối bội số ghép.",
+   "Một khóa được ghép với nhiều dòng làm nhân bản đơn hàng. Dùng validate='many_to_one' khi cần.",
+   "Nhãn index không quyết định số bản ghi khớp khi nối theo cột."
+  ],
+  "key": 1,
+  "level": 4,
+  "type": "Một lựa chọn",
+  "skill": "Pandas",
+  "tags": [
+   "Pandas",
+   "B"
+  ],
+  "seconds": 90,
+  "related": "Pandas",
+  "version": "1.0",
+  "status": "Biên soạn nội bộ",
+  "source": "https://pandas.pydata.org/docs/"
+ },
+ {
+  "id": "B006",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "Pandas",
+  "prompt": "DataFrame có index [10,20,30]. Cách lấy hàng đầu tiên theo vị trí?",
+  "options": [
+   "df.iloc[0]",
+   "df.loc[0]",
+   "df[0]"
+  ],
+  "reasons": [
+   "iloc tra vị trí bắt đầu từ 0.",
+   "loc tìm nhãn 0 không tồn tại.",
+   "Cách này tìm cột có nhãn 0."
+  ],
+  "key": 0,
+  "level": 2,
+  "type": "Một lựa chọn",
+  "skill": "Pandas",
+  "tags": [
+   "Pandas",
+   "B"
+  ],
+  "seconds": 90,
+  "related": "Pandas",
+  "version": "1.0",
+  "status": "Biên soạn nội bộ",
+  "source": "https://pandas.pydata.org/docs/"
+ },
+ {
+  "id": "B007",
+  "module": "B",
+  "topic": "SQL",
+  "subtopic": "SQL",
+  "prompt": "Muốn lấy nhóm khách có tổng chi tiêu trên 500 sau GROUP BY. Đặt điều kiện ở đâu?",
+  "options": [
+   "WHERE amount > 500",
+   "ORDER BY amount",
+   "HAVING SUM(amount) > 500"
+  ],
+  "reasons": [
+   "Chỉ giữ giao dịch riêng lẻ lớn trước khi cộng.",
+   "Sắp xếp không lọc nhóm.",
+   "HAVING lọc kết quả tổng hợp sau khi hình thành nhóm."
+  ],
+  "key": 2,
+  "level": 3,
+  "type": "Một lựa chọn",
+  "skill": "SQL",
+  "tags": [
+   "SQL",
+   "B"
+  ],
+  "seconds": 90,
+  "related": "SQL",
+  "version": "1.0",
+  "status": "Biên soạn nội bộ",
+  "source": "https://www.sqlite.org/lang_select.html"
+ },
+ {
+  "id": "B008",
+  "module": "B",
+  "topic": "SQL",
+  "subtopic": "SQL",
+  "prompt": "Cần giữ tất cả khách hàng kể cả người chưa mua khi ghép với orders. Phép nối phù hợp?",
+  "options": [
+   "CROSS JOIN",
+   "customers LEFT JOIN orders",
+   "customers INNER JOIN orders"
+  ],
+  "reasons": [
+   "Tạo các cặp không dựa trên khóa.",
+   "Giữ toàn bộ phía customers, điền NULL khi thiếu bản ghi orders.",
+   "Loại người chưa mua."
+  ],
+  "key": 1,
+  "level": 4,
+  "type": "Một lựa chọn",
+  "skill": "SQL",
+  "tags": [
+   "SQL",
+   "B"
+  ],
+  "seconds": 90,
+  "related": "SQL",
+  "version": "1.0",
+  "status": "Biên soạn nội bộ",
+  "source": "https://www.sqlite.org/lang_select.html"
+ },
+ {
+  "id": "B009",
+  "module": "B",
+  "topic": "Cấu trúc dữ liệu",
+  "subtopic": "Cấu trúc dữ liệu",
+  "prompt": "Hàng đợi xử lý ticket theo thứ tự đến. Với Python nên dùng gì để lấy đầu hàng hiệu quả?",
+  "options": [
+   "collections.deque.popleft()",
+   "list.pop(0)",
+   "set.pop()"
+  ],
+  "reasons": [
+   "Deque hỗ trợ lấy hai đầu với chi phí hằng số điển hình.",
+   "Các phần tử còn lại phải dời vị trí.",
+   "Set không bảo đảm thứ tự ticket."
+  ],
+  "key": 0,
+  "level": 2,
+  "type": "Một lựa chọn",
+  "skill": "Cấu trúc dữ liệu",
+  "tags": [
+   "Cấu trúc dữ liệu",
+   "B"
+  ],
+  "seconds": 90,
+  "related": "Cấu trúc dữ liệu",
+  "version": "1.0",
+  "status": "Biên soạn nội bộ",
+  "source": "https://docs.python.org/3/tutorial/"
+ },
+ {
+  "id": "B010",
+  "module": "B",
+  "topic": "Thuật toán",
+  "subtopic": "Thuật toán",
+  "prompt": "Binary search không tìm thấy giá trị dù có trong danh sách chưa sắp. Điều kiện nào bị vi phạm?",
+  "options": [
+   "Dãy phải dài chẵn",
+   "Dãy phải gồm số dương",
+   "Dãy phải có thứ tự phù hợp với phép so sánh"
+  ],
+  "reasons": [
+   "Chia đôi vẫn hoạt động với độ dài lẻ.",
+   "Dấu của giá trị không liên quan.",
+   "Quyết định bỏ nửa dãy dựa trên giả thiết các giá trị ở mỗi phía đã có thứ tự."
+  ],
+  "key": 2,
+  "level": 3,
+  "type": "Một lựa chọn",
+  "skill": "Thuật toán",
+  "tags": [
+   "Thuật toán",
+   "B"
+  ],
+  "seconds": 90,
+  "related": "Thuật toán",
+  "version": "1.0",
+  "status": "Biên soạn nội bộ",
+  "source": "https://docs.python.org/3/tutorial/"
+ },
+ {
+  "id": "B011",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "Python",
+  "prompt": "g=(i for i in range(3)); list(g); list(g) lần thứ hai trả gì?",
+  "options": [
+   "[3]",
+   "[]",
+   "[0,1,2]"
+  ],
+  "reasons": [
+   "range(3) không chứa 3.",
+   "Generator đã đi đến cuối sau lần duyệt đầu; muốn duyệt lại cần tạo mới.",
+   "Generator không tự đặt lại vị trí."
+  ],
+  "key": 1,
+  "level": 4,
+  "type": "Một lựa chọn",
+  "skill": "Python",
+  "tags": [
+   "Python",
+   "B"
+  ],
+  "seconds": 90,
+  "related": "Python",
+  "version": "1.0",
+  "status": "Biên soạn nội bộ",
+  "source": "https://docs.python.org/3/tutorial/"
+ },
+ {
+  "id": "B012",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "Pandas",
+  "prompt": "Tính tỷ lệ thiếu của từng cột bằng cách nào?",
+  "options": [
+   "df.isna().mean()",
+   "df.count()",
+   "df.dropna()"
+  ],
+  "reasons": [
+   "True được tính là 1, trung bình Boolean là tỷ lệ thiếu của cột.",
+   "Chỉ đếm số bản ghi có dữ liệu.",
+   "Loại hàng thiếu trước khi đo sẽ mất thông tin."
+  ],
+  "key": 0,
+  "level": 2,
+  "type": "Một lựa chọn",
+  "skill": "Pandas",
+  "tags": [
+   "Pandas",
+   "B"
+  ],
+  "seconds": 90,
+  "related": "Pandas",
+  "version": "1.0",
+  "status": "Biên soạn nội bộ",
+  "source": "https://pandas.pydata.org/docs/"
+ },
+ {
+  "id": "B013",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "NumPy",
+  "prompt": "Sau b=a[1:4] với a là ndarray một chiều, gán b[0]=99 có thể thay đổi a vì sao?",
+  "options": [
+   "Slice luôn sao chép sâu",
+   "99 là một chỉ số",
+   "Basic slicing tạo view"
+  ],
+  "reasons": [
+   "Đây không phải hành vi mặc định của basic slicing.",
+   "99 ở đây là giá trị được gán.",
+   "Hai mảng chia sẻ vùng nhớ; gọi copy() khi cần tách."
+  ],
+  "key": 2,
+  "level": 3,
+  "type": "Một lựa chọn",
+  "skill": "NumPy",
+  "tags": [
+   "NumPy",
+   "B"
+  ],
+  "seconds": 90,
+  "related": "NumPy",
+  "version": "1.0",
+  "status": "Biên soạn nội bộ",
+  "source": "https://numpy.org/doc/stable/"
+ },
+ {
+  "id": "B014",
+  "module": "B",
+  "topic": "Dữ liệu",
+  "subtopic": "Dữ liệu",
+  "prompt": "Cột mã khách có giá trị 0012. Khi read_csv cần ưu tiên kiểu gì?",
+  "options": [
+   "Float",
+   "Chuỗi",
+   "Số nguyên"
+  ],
+  "reasons": [
+   "Vừa mất số 0 vừa thêm biểu diễn thập phân.",
+   "Mã là định danh; đọc dưới dạng chuỗi giữ số 0 ở đầu.",
+   "Giá trị thành 12, mất biểu diễn định danh."
+  ],
+  "key": 1,
+  "level": 4,
+  "type": "Một lựa chọn",
+  "skill": "Dữ liệu",
+  "tags": [
+   "Dữ liệu",
+   "B"
+  ],
+  "seconds": 90,
+  "related": "Dữ liệu",
+  "version": "1.0",
+  "status": "Biên soạn nội bộ",
+  "source": "https://docs.python.org/3/tutorial/"
+ },
+ {
+  "id": "B015",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "Python",
+  "prompt": "try mở file và đọc dữ liệu. Muốn file luôn đóng kể cả khi giải mã lỗi, nên dùng gì?",
+  "options": [
+   "with open(...) as f",
+   "Chỉ gọi close sau dòng đọc",
+   "Bắt mọi lỗi rồi bỏ qua"
+  ],
+  "reasons": [
+   "Context manager quản lý vòng đời tài nguyên khi thoát khối.",
+   "Dòng đó có thể không được thực thi khi lỗi.",
+   "Che lỗi không bảo đảm tài nguyên được quản lý."
+  ],
+  "key": 0,
+  "level": 2,
+  "type": "Một lựa chọn",
+  "skill": "Python",
+  "tags": [
+   "Python",
+   "B"
+  ],
+  "seconds": 90,
+  "related": "Python",
+  "version": "1.0",
+  "status": "Biên soạn nội bộ",
+  "source": "https://docs.python.org/3/tutorial/"
+ },
+ {
+  "id": "B016",
+  "module": "B",
+  "topic": "SQL",
+  "subtopic": "SQL",
+  "prompt": "Đếm khách duy nhất đã mua theo khu vực khi một người có nhiều đơn. Biểu thức nào đúng?",
+  "options": [
+   "COUNT(*)",
+   "SUM(customer_id)",
+   "COUNT(DISTINCT customer_id)"
+  ],
+  "reasons": [
+   "Đếm số hàng giao dịch.",
+   "Mã là định danh, phép cộng không có ý nghĩa.",
+   "Đếm mỗi mã không NULL đúng một lần trong từng nhóm."
+  ],
+  "key": 2,
+  "level": 3,
+  "type": "Một lựa chọn",
+  "skill": "SQL",
+  "tags": [
+   "SQL",
+   "B"
+  ],
+  "seconds": 90,
+  "related": "SQL",
+  "version": "1.0",
+  "status": "Biên soạn nội bộ",
+  "source": "https://www.sqlite.org/lang_select.html"
+ },
+ {
+  "id": "B017",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "Python",
+  "prompt": "Biểu thức len({True, 1, 1.0}) trả về số nào?",
+  "options": [],
+  "reasons": [
+   "Các đối tượng này so sánh bằng nhau và có cùng hash nên set giữ một phần tử."
+  ],
+  "type": "Số",
+  "key": 1.0,
+  "level": 3,
+  "skill": "Python",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 100,
+  "related": "Python",
+  "version": "1.1",
+  "status": "Biên soạn nội bộ"
+ },
+ {
+  "id": "B018",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "Python",
+  "prompt": "Sau khi a=[1,2,3,4], biểu thức sum(a[::-2]) trả về số nào?",
+  "options": [],
+  "reasons": [
+   "Bắt đầu từ cuối và lùi hai vị trí cho ra [4,2]."
+  ],
+  "type": "Số",
+  "key": 6.0,
+  "level": 3,
+  "skill": "Python",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 100,
+  "related": "Python",
+  "version": "1.1",
+  "status": "Biên soạn nội bộ"
+ },
+ {
+  "id": "B019",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "NumPy",
+  "prompt": "np.arange(12).reshape(3,4)[1,-2] trả về số nào?",
+  "options": [],
+  "reasons": [
+   "Hàng thứ hai là [4,5,6,7]. Vị trí −2 là 6."
+  ],
+  "type": "Số",
+  "key": 6.0,
+  "level": 3,
+  "skill": "NumPy",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 100,
+  "related": "NumPy",
+  "version": "1.1",
+  "status": "Biên soạn nội bộ"
+ },
+ {
+  "id": "B020",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "Pandas",
+  "prompt": "Series có giá trị [1,None,1,2]. Giá trị mặc định của nunique() bằng bao nhiêu?",
+  "options": [],
+  "reasons": [
+   "Loại giá trị thiếu và đếm hai giá trị 1,2."
+  ],
+  "type": "Số",
+  "key": 2.0,
+  "level": 3,
+  "skill": "Pandas",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 100,
+  "related": "Pandas",
+  "version": "1.1",
+  "status": "Biên soạn nội bộ"
+ },
+ {
+  "id": "B021",
+  "module": "B",
+  "topic": "SQL",
+  "subtopic": "SQL",
+  "prompt": "Hai bảng có lần lượt 3 và 4 hàng. CROSS JOIN không kèm điều kiện tạo bao nhiêu hàng?",
+  "options": [],
+  "reasons": [
+   "Mỗi hàng bảng trái được ghép với toàn bộ bốn hàng bảng phải."
+  ],
+  "type": "Số",
+  "key": 12.0,
+  "level": 3,
+  "skill": "SQL",
+  "tags": [
+   "SQL"
+  ],
+  "seconds": 100,
+  "related": "SQL",
+  "version": "1.1",
+  "status": "Biên soạn nội bộ"
+ },
+ {
+  "id": "B022",
+  "module": "B",
+  "topic": "Độ phức tạp",
+  "subtopic": "Độ phức tạp",
+  "prompt": "Vòng ngoài i chạy từ 0 tới 3, vòng trong chạy đúng i lần. Tổng số lần thực hiện thân vòng trong là bao nhiêu?",
+  "options": [],
+  "reasons": [
+   "Tổng là 0+1+2+3, không phải 4² vì độ dài vòng trong thay đổi."
+  ],
+  "type": "Số",
+  "key": 6.0,
+  "level": 3,
+  "skill": "Độ phức tạp",
+  "tags": [
+   "Độ phức tạp"
+  ],
+  "seconds": 100,
+  "related": "Độ phức tạp",
+  "version": "1.1",
+  "status": "Biên soạn nội bộ"
+ },
+ {
+  "id": "B023",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "Python",
+  "prompt": "Trong Python, -7 // 3 bằng bao nhiêu?",
+  "options": [],
+  "reasons": [
+   "Phép chia sàn làm tròn xuống về âm vô cùng."
+  ],
+  "type": "Số",
+  "key": -3.0,
+  "level": 3,
+  "skill": "Python",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 100,
+  "related": "Python",
+  "version": "1.1",
+  "status": "Biên soạn nội bộ"
+ },
+ {
+  "id": "B024",
+  "module": "B",
+  "topic": "Dữ liệu",
+  "subtopic": "Dữ liệu",
+  "prompt": "Một bộ 40 mẫu được chia train/test theo tỷ lệ 75/25. Nếu chỉ oversample train lên gấp đôi, test còn bao nhiêu mẫu?",
+  "options": [],
+  "reasons": [
+   "Test được giữ độc lập. Số mẫu test ban đầu 40×0,25=10."
+  ],
+  "type": "Số",
+  "key": 10.0,
+  "level": 3,
+  "skill": "Dữ liệu",
+  "tags": [
+   "Dữ liệu"
+  ],
+  "seconds": 100,
+  "related": "Dữ liệu",
+  "version": "1.1",
+  "status": "Biên soạn nội bộ"
+ },
+ {
+  "id": "B025",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "int",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nint('101', 2)",
+  "options": [],
+  "reasons": [
+   "Chuyển chuỗi nhị phân thành số thập phân theo cơ số 2."
+  ],
+  "type": "Đọc code",
+  "key": "5",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B026",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "round",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nround(2.5)",
+  "options": [],
+  "reasons": [
+   "Tại điểm giữa chính xác, round của Python chọn số nguyên chẵn gần nhất."
+  ],
+  "type": "Đọc code",
+  "key": "2",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B027",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "divmod",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\ndivmod(17, 5)[1]",
+  "options": [],
+  "reasons": [
+   "divmod trả thương và số dư; chỉ số 1 lấy số dư."
+  ],
+  "type": "Đọc code",
+  "key": "2",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B028",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "bool",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nbool('False')",
+  "options": [],
+  "reasons": [
+   "Một chuỗi khác rỗng là truthy bất kể nội dung đánh vần Boolean."
+  ],
+  "type": "Đọc code",
+  "key": "True",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B029",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "0 or 7",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n0 or 7",
+  "options": [],
+  "reasons": [
+   "or trả toán hạng đầu truthy; số 0 là falsy."
+  ],
+  "type": "Đọc code",
+  "key": "7",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B030",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "[] and 8",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n[] and 8",
+  "options": [],
+  "reasons": [
+   "and dừng tại toán hạng falsy và trả chính list rỗng."
+  ],
+  "type": "Đọc code",
+  "key": "[]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B031",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "1 < 3 < 2",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n1 < 3 < 2",
+  "options": [],
+  "reasons": [
+   "So sánh chuỗi yêu cầu đồng thời 1<3 và 3<2."
+  ],
+  "type": "Đọc code",
+  "key": "False",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B032",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "all",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nall([])",
+  "options": [],
+  "reasons": [
+   "Không có phần tử nào sai, nên all trên tập rỗng là True."
+  ],
+  "type": "Đọc code",
+  "key": "True",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B033",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "any",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nany([0, None, ''])",
+  "options": [],
+  "reasons": [
+   "Cả ba giá trị đều falsy nên any trả False."
+  ],
+  "type": "Đọc code",
+  "key": "False",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B034",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "len",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nlen(('ai'))",
+  "options": [],
+  "reasons": [
+   "Ngoặc đơn chỉ gom nhóm; thiếu dấu phẩy nên đối tượng là chuỗi hai ký tự."
+  ],
+  "type": "Đọc code",
+  "key": "2",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B035",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "type",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\ntype(4 / 2).__name__",
+  "options": [],
+  "reasons": [
+   "Phép chia / trả float ngay cả khi thương là số nguyên."
+  ],
+  "type": "Đọc code",
+  "key": "'float'",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B036",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "list",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nlist(range(5, 0, -2))",
+  "options": [],
+  "reasons": [
+   "Bước âm đi từ 5, dừng trước 0 nên dãy là 5,3,1."
+  ],
+  "type": "Đọc code",
+  "key": "[5, 3, 1]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B037",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "[v for v in range",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n[v for v in range(5) if v % 2]",
+  "options": [],
+  "reasons": [
+   "Điều kiện phần dư giữ các số lẻ trong đoạn từ 0 tới 4."
+  ],
+  "type": "Đọc code",
+  "key": "[1, 3]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B038",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "list",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nlist(zip([1,2,3], ['x']))",
+  "options": [],
+  "reasons": [
+   "zip kết thúc khi iterable ngắn nhất hết phần tử."
+  ],
+  "type": "Đọc code",
+  "key": "[(1, 'x')]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B039",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "list",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nlist(enumerate(['a','b'],start=3))[-1][0]",
+  "options": [],
+  "reasons": [
+   "Số thứ tự bắt đầu từ 3 nên phần tử thứ hai nhận nhãn 4."
+  ],
+  "type": "Đọc code",
+  "key": "4",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B040",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "sum",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nsum([True,False,True])",
+  "options": [],
+  "reasons": [
+   "Boolean tham gia phép cộng dưới dạng 1 hoặc 0."
+  ],
+  "type": "Đọc code",
+  "key": "2",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B041",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "str",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nstr(0.10)",
+  "options": [],
+  "reasons": [
+   "Chuỗi biểu diễn mặc định loại số 0 thừa sau dấu thập phân."
+  ],
+  "type": "Đọc code",
+  "key": "'0.1'",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B042",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "'12'.zfill",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n'12'.zfill(4)",
+  "options": [],
+  "reasons": [
+   "zfill đệm số 0 bên trái cho đủ độ rộng bốn ký tự."
+  ],
+  "type": "Đọc code",
+  "key": "'0012'",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B043",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "'  a  b '.split",
+  "prompt": "Chuẩn hóa dòng văn bản có khoảng trắng liên tiếp. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n'  a  b '.split()",
+  "options": [],
+  "reasons": [
+   "split không truyền dấu tách gộp các chuỗi khoảng trắng và bỏ phần rỗng ở biên."
+  ],
+  "type": "Đọc code",
+  "key": "['a', 'b']",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B044",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "'a,,b'.split",
+  "prompt": "Tách một hàng có trường bị bỏ trống. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n'a,,b'.split(',')",
+  "options": [],
+  "reasons": [
+   "Khi nêu dấu tách cụ thể, trường rỗng giữa hai dấu phẩy được giữ."
+  ],
+  "type": "Đọc code",
+  "key": "['a', '', 'b']",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B045",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "'report.csv'.removesuffix",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n'report.csv'.removesuffix('.csv')",
+  "options": [],
+  "reasons": [
+   "removesuffix xóa đúng hậu tố một lần."
+  ],
+  "type": "Đọc code",
+  "key": "'report'",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B046",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "'banana'.count",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n'banana'.count('ana')",
+  "options": [],
+  "reasons": [
+   "count đếm các lần xuất hiện không chồng lên nhau."
+  ],
+  "type": "Đọc code",
+  "key": "1",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B047",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "'learning'.find",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n'learning'.find('xyz')",
+  "options": [],
+  "reasons": [
+   "find trả −1 khi không có chuỗi con; index sẽ báo lỗi."
+  ],
+  "type": "Đọc code",
+  "key": "-1",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B048",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "'AI'.casefold",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n'AI'.casefold()",
+  "options": [],
+  "reasons": [
+   "casefold tạo chuỗi chữ thường dùng trong so khớp không phân biệt hoa thường."
+  ],
+  "type": "Đọc code",
+  "key": "'ai'",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B049",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "'A-B-C'.partition",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n'A-B-C'.partition('-')[2]",
+  "options": [],
+  "reasons": [
+   "partition chỉ tách ở dấu đầu tiên; phần thứ ba là hậu tố còn lại."
+  ],
+  "type": "Đọc code",
+  "key": "'B-C'",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B050",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "'ab' * 0",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n'ab' * 0",
+  "options": [],
+  "reasons": [
+   "Lặp chuỗi không lần tạo chuỗi rỗng."
+  ],
+  "type": "Đọc code",
+  "key": "''",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B051",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "[1,2,3][10:]",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n[1,2,3][10:]",
+  "options": [],
+  "reasons": [
+   "Slice ngoài biên được cắt theo độ dài, khác truy cập một chỉ số ngoài biên."
+  ],
+  "type": "Đọc code",
+  "key": "[]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B052",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "[1,2,3][-1:]",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n[1,2,3][-1:]",
+  "options": [],
+  "reasons": [
+   "Slice lấy từ vị trí cuối và trả list có một phần tử."
+  ],
+  "type": "Đọc code",
+  "key": "[3]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B053",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "[1,2]+[3]",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n[1,2]+[3]",
+  "options": [],
+  "reasons": [
+   "Phép cộng list nối phần tử theo thứ tự hai toán hạng."
+  ],
+  "type": "Đọc code",
+  "key": "[1, 2, 3]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B054",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "[[0]*2 for _ in range",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n[[0]*2 for _ in range(2)][0] is [[0]*2 for _ in range(2)][1]",
+  "options": [],
+  "reasons": [
+   "Hai list được khởi tạo độc lập nên không cùng danh tính đối tượng."
+  ],
+  "type": "Đọc code",
+  "key": "False",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B055",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "a=[[0]]*2; a[0].append",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\na=[[0]]*2\na[0].append(3)\na[1]",
+  "options": [],
+  "reasons": [
+   "Lặp list chỉ sao chép tham chiếu tới list con; sửa một hàng tác động hàng còn lại."
+  ],
+  "type": "Đọc code",
+  "key": "[0, 3]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B056",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "a=[3,1,2]; v=a.sort",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\na=[3,1,2]\nv=a.sort()\nv",
+  "options": [],
+  "reasons": [
+   "sort thay đổi list tại chỗ và trả None."
+  ],
+  "type": "Đọc code",
+  "key": "None",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B057",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "a=[7,8]; a.pop",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\na=[7,8]\na.pop()",
+  "options": [],
+  "reasons": [
+   "pop mặc định lấy và trả phần tử cuối."
+  ],
+  "type": "Đọc code",
+  "key": "8",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B058",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "a=['x','x','y']; a.remove",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\na=['x','x','y']\na.remove('x')\na",
+  "options": [],
+  "reasons": [
+   "remove loại lần đầu khớp và giữ lần x thứ hai."
+  ],
+  "type": "Đọc code",
+  "key": "['x', 'y']",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B059",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "a=[1]; a.extend",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\na=[1]\na.extend('ab')\nlen(a)",
+  "options": [],
+  "reasons": [
+   "extend duyệt chuỗi và thêm từng ký tự, vì vậy list dài ba."
+  ],
+  "type": "Đọc code",
+  "key": "3",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B060",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "a=[1,2,3]; a[1:2]=[8,9]; len",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\na=[1,2,3]\na[1:2]=[8,9]\nlen(a)",
+  "options": [],
+  "reasons": [
+   "Gán slice có thể thay một phần tử bằng hai và thay đổi chiều dài."
+  ],
+  "type": "Đọc code",
+  "key": "4",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B061",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "{'x': 1, 'x': 8}['x']",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n{'x': 1, 'x': 8}['x']",
+  "options": [],
+  "reasons": [
+   "Khóa trùng trong dict literal giữ giá trị xuất hiện cuối."
+  ],
+  "type": "Đọc code",
+  "key": "8",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B062",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "{}.get",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n{}.get('key', 12)",
+  "options": [],
+  "reasons": [
+   "get trả mặc định được truyền khi khóa chưa tồn tại."
+  ],
+  "type": "Đọc code",
+  "key": "12",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B063",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "d={}; d.setdefault",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nd={}\nd.setdefault('x', []).append(3)\nd['x']",
+  "options": [],
+  "reasons": [
+   "setdefault tạo và trả chính list gắn với khóa mới."
+  ],
+  "type": "Đọc code",
+  "key": "[3]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B064",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "dict.fromkeys",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\ndict.fromkeys(['a','a','b'],0)",
+  "options": [],
+  "reasons": [
+   "Một dict chỉ có một bản ghi cho mỗi khóa."
+  ],
+  "type": "Đọc code",
+  "key": "{'a': 0, 'b': 0}",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B065",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "sorted",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nsorted({'b':1,'a':2})",
+  "options": [],
+  "reasons": [
+   "Duyệt dict theo khóa, sorted sắp các khóa tăng dần."
+  ],
+  "type": "Đọc code",
+  "key": "['a', 'b']",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B066",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "sorted",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nsorted({1,2,3}.difference({2,4}))",
+  "options": [],
+  "reasons": [
+   "Hiệu tập giữ các phần tử chỉ thuộc toán hạng bên trái."
+  ],
+  "type": "Đọc code",
+  "key": "[1, 3]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B067",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "sorted",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nsorted({1,2}^{2,3})",
+  "options": [],
+  "reasons": [
+   "Hiệu đối xứng giữ các phần tử chỉ xuất hiện ở đúng một trong hai tập."
+  ],
+  "type": "Đọc code",
+  "key": "[1, 3]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B068",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "{1,2}.issubset",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n{1,2}.issubset({1,2,3})",
+  "options": [],
+  "reasons": [
+   "Tất cả phần tử tập trái có mặt ở tập phải."
+  ],
+  "type": "Đọc code",
+  "key": "True",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B069",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "len",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nlen(frozenset([2,2,3]))",
+  "options": [],
+  "reasons": [
+   "frozenset bất biến và gộp các phần tử bằng nhau."
+  ],
+  "type": "Đọc code",
+  "key": "2",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B070",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n(lambda a,b=3:a*b)(2)",
+  "options": [],
+  "reasons": [
+   "Đối số b dùng mặc định 3; tích là 6."
+  ],
+  "type": "Đọc code",
+  "key": "6",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B071",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "list",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nlist(map(lambda s: len(s),['x','abc']))",
+  "options": [],
+  "reasons": [
+   "map áp dụng hàm len riêng lên từng chuỗi trước khi vật hóa thành list."
+  ],
+  "type": "Đọc code",
+  "key": "[1, 3]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B072",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "list",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nlist(filter(None,[0,1,'',2]))",
+  "options": [],
+  "reasons": [
+   "Với hàm None, filter giữ các phần tử truthy."
+  ],
+  "type": "Đọc code",
+  "key": "[1, 2]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B073",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "next",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnext(iter([]), 99)",
+  "options": [],
+  "reasons": [
+   "Đối số thứ hai của next thay cho StopIteration khi iterator rỗng."
+  ],
+  "type": "Đọc code",
+  "key": "99",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B074",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "max",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nmax(['ai','python','sql'], key=len)",
+  "options": [],
+  "reasons": [
+   "max so khóa là độ dài nhưng trả chính chuỗi có độ dài lớn nhất."
+  ],
+  "type": "Đọc code",
+  "key": "'python'",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B075",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "min",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nmin([-3,1,2],key=abs)",
+  "options": [],
+  "reasons": [
+   "Giá trị có độ lớn tuyệt đối nhỏ nhất là 1."
+  ],
+  "type": "Đọc code",
+  "key": "1",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B076",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "sorted",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nsorted([('b',2),('a',2)],key=lambda v:v[1])[0][0]",
+  "options": [],
+  "reasons": [
+   "Python sort ổn định nên hai khóa bằng nhau giữ thứ tự ban đầu."
+  ],
+  "type": "Đọc code",
+  "key": "'b'",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B077",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "list",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nlist(reversed('ab'))",
+  "options": [],
+  "reasons": [
+   "reversed tạo iterator từ ký tự cuối về đầu."
+  ],
+  "type": "Đọc code",
+  "key": "['b', 'a']",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B078",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "sum",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nsum(range(1,6,2),10)",
+  "options": [],
+  "reasons": [
+   "sum bắt đầu ở 10 rồi cộng 1,3,5."
+  ],
+  "type": "Đọc code",
+  "key": "19",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B079",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "format",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nformat(15,'04b')",
+  "options": [],
+  "reasons": [
+   "b biểu diễn nhị phân, 04 là độ rộng tối thiểu bốn chữ số."
+  ],
+  "type": "Đọc code",
+  "key": "'1111'",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B080",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "isinstance",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nisinstance(True,int)",
+  "options": [],
+  "reasons": [
+   "bool là lớp con của int trong Python."
+  ],
+  "type": "Đọc code",
+  "key": "True",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B081",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "{i%2:i for i in range",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n{i%2:i for i in range(4)}[0]",
+  "options": [],
+  "reasons": [
+   "Các giá trị i chẵn ghi vào cùng khóa 0, lần cuối gán 2."
+  ],
+  "type": "Đọc code",
+  "key": "2",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B082",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "list",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nlist(zip(*[(1,'a'),(2,'b')]))[0]",
+  "options": [],
+  "reasons": [
+   "Dấu sao giải nén từng bản ghi thành đối số của zip, tạo các cột."
+  ],
+  "type": "Đọc code",
+  "key": "(1, 2)",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B083",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "sum",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nsum(x*y for x,y in [(2,3),(1,4)])",
+  "options": [],
+  "reasons": [
+   "Generator tính từng tích rồi sum cộng lại, không cần list trung gian."
+  ],
+  "type": "Đọc code",
+  "key": "10",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B084",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "abs",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nabs(complex(3,4))",
+  "options": [],
+  "reasons": [
+   "Độ lớn số phức là căn tổng bình phương phần thực và ảo."
+  ],
+  "type": "Đọc code",
+  "key": "5.0",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B085",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "int",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nint(-2.9)",
+  "options": [],
+  "reasons": [
+   "int cắt phần thập phân về phía 0, khác với floor."
+  ],
+  "type": "Đọc code",
+  "key": "-2",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B086",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "remainder=7%",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nremainder=7%(-3)\nremainder",
+  "options": [],
+  "reasons": [
+   "Theo quy ước modulo Python, số dư có cùng dấu với số chia."
+  ],
+  "type": "Đọc code",
+  "key": "-2",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B087",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "sum",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nsum(1 for i in range(6) if i%2==0 and i>0)",
+  "options": [],
+  "reasons": [
+   "Trong 0 đến 5, chỉ 2 và 4 thỏa đồng thời hai điều kiện."
+  ],
+  "type": "Đọc code",
+  "key": "2",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B088",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "a,b=1,2; a,b=b,a+b; b",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\na,b=1,2\na,b=b,a+b\nb",
+  "options": [],
+  "reasons": [
+   "Vế phải được tính từ giá trị cũ trước khi gán đồng thời."
+  ],
+  "type": "Đọc code",
+  "key": "3",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B089",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "first,*middle,last=[1,2,3,4]; middle",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nfirst,*middle,last=[1,2,3,4]\nmiddle",
+  "options": [],
+  "reasons": [
+   "Biến có dấu sao nhận list các phần tử còn lại giữa hai đầu."
+  ],
+  "type": "Đọc code",
+  "key": "[2, 3]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B090",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "d={'x':1}; d.update",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nd={'x':1}\nd.update(x=5,y=2)\nsum(d.values())",
+  "options": [],
+  "reasons": [
+   "update ghi đè x rồi thêm y; tổng bằng 7."
+  ],
+  "type": "Đọc code",
+  "key": "7",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B091",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "a=[1]; b=a[:]; b+= [2]; len",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\na=[1]\nb=a[:]\nb+= [2]\nlen(a)",
+  "options": [],
+  "reasons": [
+   "Slice tạo list ngoài mới nên cộng tại chỗ vào b không đổi chiều dài a."
+  ],
+  "type": "Đọc code",
+  "key": "1",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B092",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "len",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nlen(bytes('á','utf-8'))",
+  "options": [],
+  "reasons": [
+   "Ký tự á có hai byte UTF-8 dù chuỗi chỉ có một code point."
+  ],
+  "type": "Đọc code",
+  "key": "2",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B093",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "b'ab'[0]",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nb'ab'[0]",
+  "options": [],
+  "reasons": [
+   "Chỉ số đơn vào bytes trả số nguyên là mã của byte."
+  ],
+  "type": "Đọc code",
+  "key": "97",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B094",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "float",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nfloat('nan')==float('nan')",
+  "options": [],
+  "reasons": [
+   "Theo quy ước số thực dấu phẩy động, NaN không bằng chính nó."
+  ],
+  "type": "Đọc code",
+  "key": "False",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B095",
+  "module": "B",
+  "topic": "Python",
+  "subtopic": "f'{0.125:.1%}'",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nf'{0.125:.1%}'",
+  "options": [],
+  "reasons": [
+   "Định dạng phần trăm nhân giá trị với 100 và giữ một chữ số thập phân."
+  ],
+  "type": "Đọc code",
+  "key": "'12.5%'",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Python"
+  ],
+  "seconds": 70,
+  "related": "Python",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B096",
+  "module": "B",
+  "topic": "Thuật toán",
+  "subtopic": "from bisect import bisect_left; bisect_left",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nfrom bisect import bisect_left\nbisect_left([1,2,2,5],2)",
+  "options": [],
+  "reasons": [
+   "Điểm chèn bên trái nằm trước phần tử bằng khóa đầu tiên."
+  ],
+  "type": "Đọc code",
+  "key": "1",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Thuật toán"
+  ],
+  "seconds": 70,
+  "related": "Thuật toán",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B097",
+  "module": "B",
+  "topic": "Thuật toán",
+  "subtopic": "from bisect import bisect_right; bisect_right",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nfrom bisect import bisect_right\nbisect_right([1,2,2,5],2)",
+  "options": [],
+  "reasons": [
+   "Điểm chèn bên phải nằm sau toàn bộ phần tử bằng khóa."
+  ],
+  "type": "Đọc code",
+  "key": "3",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Thuật toán"
+  ],
+  "seconds": 70,
+  "related": "Thuật toán",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B098",
+  "module": "B",
+  "topic": "Thuật toán",
+  "subtopic": "import heapq; q=[3,1,5]; heapq.heapify",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nimport heapq\nq=[3,1,5]\nheapq.heapify(q)\nheapq.heappop(q)",
+  "options": [],
+  "reasons": [
+   "Min-heap lấy giá trị nhỏ nhất ở gốc."
+  ],
+  "type": "Đọc code",
+  "key": "1",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Thuật toán"
+  ],
+  "seconds": 70,
+  "related": "Thuật toán",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B099",
+  "module": "B",
+  "topic": "Thuật toán",
+  "subtopic": "import heapq; heapq.nlargest",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nimport heapq\nheapq.nlargest(2,[4,9,1,8])",
+  "options": [],
+  "reasons": [
+   "nlargest trả hai phần tử lớn nhất theo thứ tự giảm dần."
+  ],
+  "type": "Đọc code",
+  "key": "[9, 8]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Thuật toán"
+  ],
+  "seconds": 70,
+  "related": "Thuật toán",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B100",
+  "module": "B",
+  "topic": "Thuật toán",
+  "subtopic": "from collections import deque; q=deque",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nfrom collections import deque\nq=deque([1,2],maxlen=2)\nq.append(3)\nlist(q)",
+  "options": [],
+  "reasons": [
+   "Deque giới hạn dung lượng tự loại phần tử ở đầu còn lại khi đầy."
+  ],
+  "type": "Đọc code",
+  "key": "[2, 3]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Thuật toán"
+  ],
+  "seconds": 70,
+  "related": "Thuật toán",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B101",
+  "module": "B",
+  "topic": "Thuật toán",
+  "subtopic": "from collections import deque; q=deque",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nfrom collections import deque\nq=deque('abc')\nq.rotate(1)\n''.join(q)",
+  "options": [],
+  "reasons": [
+   "Xoay phải một bước đưa phần tử cuối lên đầu."
+  ],
+  "type": "Đọc code",
+  "key": "'cab'",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Thuật toán"
+  ],
+  "seconds": 70,
+  "related": "Thuật toán",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B102",
+  "module": "B",
+  "topic": "Thuật toán",
+  "subtopic": "from collections import Counter; ",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nfrom collections import Counter\n(Counter('aab')-Counter('abb'))['b']",
+  "options": [],
+  "reasons": [
+   "Phép trừ Counter loại kết quả không dương; truy cập khóa thiếu trả 0."
+  ],
+  "type": "Đọc code",
+  "key": "0",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Thuật toán"
+  ],
+  "seconds": 70,
+  "related": "Thuật toán",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B103",
+  "module": "B",
+  "topic": "Thuật toán",
+  "subtopic": "from collections import defaultdict; d=defaultdict",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nfrom collections import defaultdict\nd=defaultdict(int)\nd['a']+=2\nd['a']",
+  "options": [],
+  "reasons": [
+   "Factory int khởi tạo 0 trước khi cộng."
+  ],
+  "type": "Đọc code",
+  "key": "2",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Thuật toán"
+  ],
+  "seconds": 70,
+  "related": "Thuật toán",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B104",
+  "module": "B",
+  "topic": "Thuật toán",
+  "subtopic": "from itertools import product; len",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nfrom itertools import product\nlen(list(product([0,1],repeat=3)))",
+  "options": [],
+  "reasons": [
+   "Ba vị trí độc lập, mỗi vị trí có hai lựa chọn."
+  ],
+  "type": "Đọc code",
+  "key": "8",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Thuật toán"
+  ],
+  "seconds": 70,
+  "related": "Thuật toán",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B105",
+  "module": "B",
+  "topic": "Thuật toán",
+  "subtopic": "from itertools import permutations; len",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nfrom itertools import permutations\nlen(list(permutations('ABC',2)))",
+  "options": [],
+  "reasons": [
+   "Chọn hai phần tử có thứ tự và không lặp cho 3×2 cách."
+  ],
+  "type": "Đọc code",
+  "key": "6",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Thuật toán"
+  ],
+  "seconds": 70,
+  "related": "Thuật toán",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B106",
+  "module": "B",
+  "topic": "Thuật toán",
+  "subtopic": "from itertools import islice; list",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nfrom itertools import islice\nlist(islice(range(20),2,8,2))",
+  "options": [],
+  "reasons": [
+   "islice dùng các vị trí 2,4,6 vì điểm kết thúc bị loại."
+  ],
+  "type": "Đọc code",
+  "key": "[2, 4, 6]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Thuật toán"
+  ],
+  "seconds": 70,
+  "related": "Thuật toán",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B107",
+  "module": "B",
+  "topic": "Thuật toán",
+  "subtopic": "from itertools import chain; list",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nfrom itertools import chain\nlist(chain.from_iterable([[1],[],[3,4]]))",
+  "options": [],
+  "reasons": [
+   "chain nối các iterator con theo thứ tự và bỏ qua iterator rỗng."
+  ],
+  "type": "Đọc code",
+  "key": "[1, 3, 4]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Thuật toán"
+  ],
+  "seconds": 70,
+  "related": "Thuật toán",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B108",
+  "module": "B",
+  "topic": "Thuật toán",
+  "subtopic": "from itertools import takewhile; list",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nfrom itertools import takewhile\nlist(takewhile(lambda v:v<3,[1,4,2]))",
+  "options": [],
+  "reasons": [
+   "takewhile dừng hẳn khi gặp 4 nên không xét tiếp số 2."
+  ],
+  "type": "Đọc code",
+  "key": "[1]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Thuật toán"
+  ],
+  "seconds": 70,
+  "related": "Thuật toán",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B109",
+  "module": "B",
+  "topic": "Thuật toán",
+  "subtopic": "from itertools import dropwhile; list",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nfrom itertools import dropwhile\nlist(dropwhile(lambda v:v<3,[1,4,2]))",
+  "options": [],
+  "reasons": [
+   "dropwhile bỏ tiền tố thỏa điều kiện; sau 4 thì giữ cả phần đuôi."
+  ],
+  "type": "Đọc code",
+  "key": "[4, 2]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Thuật toán"
+  ],
+  "seconds": 70,
+  "related": "Thuật toán",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B110",
+  "module": "B",
+  "topic": "Thuật toán",
+  "subtopic": "from itertools import groupby; [k for k,g in groupby",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nfrom itertools import groupby\n[k for k,g in groupby('aaba')]",
+  "options": [],
+  "reasons": [
+   "groupby chỉ gom các phần tử kề nhau nên a ở cuối tạo nhóm mới."
+  ],
+  "type": "Đọc code",
+  "key": "['a', 'b', 'a']",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Thuật toán"
+  ],
+  "seconds": 70,
+  "related": "Thuật toán",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B111",
+  "module": "B",
+  "topic": "Dữ liệu",
+  "subtopic": "import json; json.loads",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nimport json\njson.loads('{\"active\":false}')['active']",
+  "options": [],
+  "reasons": [
+   "Boolean JSON false được chuyển thành False của Python."
+  ],
+  "type": "Đọc code",
+  "key": "False",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Dữ liệu"
+  ],
+  "seconds": 70,
+  "related": "Dữ liệu",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B112",
+  "module": "B",
+  "topic": "Dữ liệu",
+  "subtopic": "import csv; next",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nimport csv\nnext(csv.reader(['\"a,b\",c']))[0]",
+  "options": [],
+  "reasons": [
+   "Dấu phẩy bên trong cặp ngoặc kép là nội dung của trường đầu."
+  ],
+  "type": "Đọc code",
+  "key": "'a,b'",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Dữ liệu"
+  ],
+  "seconds": 70,
+  "related": "Dữ liệu",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B113",
+  "module": "B",
+  "topic": "Dữ liệu",
+  "subtopic": "from pathlib import PurePath; PurePath",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nfrom pathlib import PurePath\nPurePath('sales.tar.gz').suffix",
+  "options": [],
+  "reasons": [
+   "suffix lấy phần mở rộng cuối cùng, khác với suffixes."
+  ],
+  "type": "Đọc code",
+  "key": "'.gz'",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Dữ liệu"
+  ],
+  "seconds": 70,
+  "related": "Dữ liệu",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B114",
+  "module": "B",
+  "topic": "Dữ liệu",
+  "subtopic": "from datetime import date; ",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nfrom datetime import date\n(date(2024,3,1)-date(2024,2,28)).days",
+  "options": [],
+  "reasons": [
+   "Năm 2024 là năm nhuận, có ngày 29/2 nằm giữa."
+  ],
+  "type": "Đọc code",
+  "key": "2",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Dữ liệu"
+  ],
+  "seconds": 70,
+  "related": "Dữ liệu",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B115",
+  "module": "B",
+  "topic": "Dữ liệu",
+  "subtopic": "from decimal import Decimal; str",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nfrom decimal import Decimal\nstr(Decimal('0.1')+Decimal('0.2'))",
+  "options": [],
+  "reasons": [
+   "Khởi tạo từ chuỗi thập phân giữ chính xác hai đại lượng tiền tệ."
+  ],
+  "type": "Đọc code",
+  "key": "'0.3'",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Dữ liệu"
+  ],
+  "seconds": 70,
+  "related": "Dữ liệu",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B116",
+  "module": "B",
+  "topic": "Dữ liệu",
+  "subtopic": "from fractions import Fraction; Fraction",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nfrom fractions import Fraction\nFraction(6,8).denominator",
+  "options": [],
+  "reasons": [
+   "Phân số được rút gọn thành 3/4 trước khi lấy mẫu số."
+  ],
+  "type": "Đọc code",
+  "key": "4",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Dữ liệu"
+  ],
+  "seconds": 70,
+  "related": "Dữ liệu",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B117",
+  "module": "B",
+  "topic": "Dữ liệu",
+  "subtopic": "import re; re.findall",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nimport re\nre.findall(r'\\d+', 'A12-B3')",
+  "options": [],
+  "reasons": [
+   "Mẫu gồm một hoặc nhiều chữ số liên tiếp, tạo hai cụm số."
+  ],
+  "type": "Đọc code",
+  "key": "['12', '3']",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Dữ liệu"
+  ],
+  "seconds": 70,
+  "related": "Dữ liệu",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B118",
+  "module": "B",
+  "topic": "Dữ liệu",
+  "subtopic": "import re; bool",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nimport re\nbool(re.fullmatch(r'ID-\\d{3}','ID-1234'))",
+  "options": [],
+  "reasons": [
+   "fullmatch yêu cầu toàn bộ chuỗi khớp, mã có thừa một chữ số."
+  ],
+  "type": "Đọc code",
+  "key": "False",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Dữ liệu"
+  ],
+  "seconds": 70,
+  "related": "Dữ liệu",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B119",
+  "module": "B",
+  "topic": "Dữ liệu",
+  "subtopic": "import math; math.ceil",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nimport math\nmath.ceil(101/20)",
+  "options": [],
+  "reasons": [
+   "Số trang cần làm tròn lên để chứa cả bản ghi cuối chưa đủ một trang."
+  ],
+  "type": "Đọc code",
+  "key": "6",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Dữ liệu"
+  ],
+  "seconds": 70,
+  "related": "Dữ liệu",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B120",
+  "module": "B",
+  "topic": "Dữ liệu",
+  "subtopic": "from statistics import median_low; median_low",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nfrom statistics import median_low\nmedian_low([2,4,8,10])",
+  "options": [],
+  "reasons": [
+   "Với cỡ chẵn median_low trả phần tử giữa phía thấp, không lấy trung bình."
+  ],
+  "type": "Đọc code",
+  "key": "4",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Dữ liệu"
+  ],
+  "seconds": 70,
+  "related": "Dữ liệu",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B121",
+  "module": "B",
+  "topic": "Dữ liệu",
+  "subtopic": "import io; f=io.StringIO",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nimport io\nf=io.StringIO('a\\nb')\nf.readline().strip()",
+  "options": [],
+  "reasons": [
+   "readline lấy đúng dòng đầu; strip loại ký tự xuống dòng."
+  ],
+  "type": "Đọc code",
+  "key": "'a'",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Dữ liệu"
+  ],
+  "seconds": 70,
+  "related": "Dữ liệu",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://docs.python.org/3/library/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B122",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.zeros",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.zeros((2,3),dtype=int).size",
+  "options": [],
+  "reasons": [
+   "size là tích các chiều nên bằng số phần tử toàn mảng."
+  ],
+  "type": "Đọc code",
+  "key": "6",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B123",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.array",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.array(8).ndim",
+  "options": [],
+  "reasons": [
+   "Scalar ndarray không có trục, ndim bằng 0."
+  ],
+  "type": "Đọc code",
+  "key": "0",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B124",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.array",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.array([[1],[2],[3]]).shape",
+  "options": [],
+  "reasons": [
+   "Ba hàng, mỗi hàng một phần tử nên shape (3,1)."
+  ],
+  "type": "Đọc code",
+  "key": "(3, 1)",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B125",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.arange",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.arange(6).reshape(2,-1).shape[-1]",
+  "options": [],
+  "reasons": [
+   "Chiều −1 được suy ra từ tổng phần tử chia cho 2."
+  ],
+  "type": "Đọc code",
+  "key": "3",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B126",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.linspace",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.linspace(0,1,4,endpoint=False).tolist()",
+  "options": [],
+  "reasons": [
+   "Không lấy đầu mút 1, khoảng cách bằng 1/4."
+  ],
+  "type": "Đọc code",
+  "key": "[0.0, 0.25, 0.5, 0.75]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B127",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.arange",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.arange(1,6,2).tolist()",
+  "options": [],
+  "reasons": [
+   "Điểm dừng 6 bị loại; các giá trị tăng bước 2."
+  ],
+  "type": "Đọc code",
+  "key": "[1, 3, 5]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B128",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.eye",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.eye(3,k=1,dtype=int).sum().item()",
+  "options": [],
+  "reasons": [
+   "Đường chéo lệch trên một vị trí trong ma trận 3×3 có hai ô bằng 1."
+  ],
+  "type": "Đọc code",
+  "key": "2",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B129",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.diag",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.diag([2,3]).tolist()",
+  "options": [],
+  "reasons": [
+   "Với đầu vào một chiều, diag dựng ma trận đường chéo."
+  ],
+  "type": "Đọc code",
+  "key": "[[2, 0], [0, 3]]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B130",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.tril",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.tril([[1,2],[3,4]],k=-1).tolist()",
+  "options": [],
+  "reasons": [
+   "k=−1 giữ vùng dưới đường chéo chính và loại đường chéo."
+  ],
+  "type": "Đọc code",
+  "key": "[[0, 0], [3, 0]]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B131",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.fliplr",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.fliplr([[1,2,3],[4,5,6]])[0].tolist()",
+  "options": [],
+  "reasons": [
+   "fliplr đảo thứ tự cột nhưng giữ thứ tự hàng."
+  ],
+  "type": "Đọc code",
+  "key": "[3, 2, 1]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B132",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.rot90",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.rot90([[1,2],[3,4]]).tolist()",
+  "options": [],
+  "reasons": [
+   "rot90 mặc định xoay ngược chiều kim đồng hồ một góc vuông."
+  ],
+  "type": "Đọc code",
+  "key": "[[2, 4], [1, 3]]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B133",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.roll",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.roll([1,2,3],-1).tolist()",
+  "options": [],
+  "reasons": [
+   "Dịch vòng âm một bước đưa phần tử đầu xuống cuối."
+  ],
+  "type": "Đọc code",
+  "key": "[2, 3, 1]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B134",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.tile",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.tile([1,2],2).tolist()",
+  "options": [],
+  "reasons": [
+   "tile lặp trọn block [1,2], khác repeat lặp từng phần tử."
+  ],
+  "type": "Đọc code",
+  "key": "[1, 2, 1, 2]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B135",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.hstack",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.hstack(([1,2],[3])).shape",
+  "options": [],
+  "reasons": [
+   "Với đầu vào một chiều, hstack nối tiếp theo trục duy nhất."
+  ],
+  "type": "Đọc code",
+  "key": "(3,)",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B136",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.vstack",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.vstack(([1,2],[3,4])).shape",
+  "options": [],
+  "reasons": [
+   "vstack biến hai vector cùng độ rộng thành hai hàng."
+  ],
+  "type": "Đọc code",
+  "key": "(2, 2)",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B137",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.stack",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.stack(([1,2],[3,4]),axis=1).tolist()",
+  "options": [],
+  "reasons": [
+   "Tạo trục mới tại vị trí 1 nên hai vector trở thành cột."
+  ],
+  "type": "Đọc code",
+  "key": "[[1, 3], [2, 4]]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B138",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.concatenate",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.concatenate(([[1]],[[2]]),axis=None).tolist()",
+  "options": [],
+  "reasons": [
+   "axis=None làm phẳng các đầu vào trước khi nối."
+  ],
+  "type": "Đọc code",
+  "key": "[1, 2]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B139",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "[len",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\n[len(a) for a in np.array_split(np.arange(5),2)]",
+  "options": [],
+  "reasons": [
+   "array_split chia gần đều, phần đầu nhận một phần tử dư."
+  ],
+  "type": "Đọc code",
+  "key": "[3, 2]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B140",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.expand_dims",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.expand_dims([1,2,3],0).shape",
+  "options": [],
+  "reasons": [
+   "Chèn trục mới ở đầu tạo ma trận một hàng ba cột."
+  ],
+  "type": "Đọc code",
+  "key": "(1, 3)",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B141",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.squeeze",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.squeeze(np.zeros((1,2,1))).shape",
+  "options": [],
+  "reasons": [
+   "squeeze loại các chiều có kích thước 1 nên còn vector dài 2."
+  ],
+  "type": "Đọc code",
+  "key": "(2,)",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B142",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.swapaxes",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.swapaxes(np.zeros((2,3,4)),0,2).shape",
+  "options": [],
+  "reasons": [
+   "Đổi trục đầu với trục cuối, giữ trục giữa."
+  ],
+  "type": "Đọc code",
+  "key": "(4, 3, 2)",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B143",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.broadcast_shapes",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.broadcast_shapes((2,1),(1,3))",
+  "options": [],
+  "reasons": [
+   "Hai chiều đơn mở rộng tương thích để tạo shape (2,3)."
+  ],
+  "type": "Đọc code",
+  "key": "(2, 3)",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B144",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.where",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.where(np.array([1,4])>2,9,0).tolist()",
+  "options": [],
+  "reasons": [
+   "where chọn 9 khi điều kiện đúng, 0 ở phần tử còn lại."
+  ],
+  "type": "Đọc code",
+  "key": "[0, 9]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B145",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.nonzero",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.nonzero([0,2,0,3])[0].tolist()",
+  "options": [],
+  "reasons": [
+   "nonzero trả chỉ số của các phần tử khác 0, không trả giá trị."
+  ],
+  "type": "Đọc code",
+  "key": "[1, 3]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B146",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.take",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.take([4,7,9],[2,0]).tolist()",
+  "options": [],
+  "reasons": [
+   "take lấy theo chỉ số được cung cấp và giữ thứ tự yêu cầu."
+  ],
+  "type": "Đọc code",
+  "key": "[9, 4]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B147",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "a=np.arange",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\na=np.arange(5)\nb=a[[1,2]]\nb[0]=99\nint(a[1])",
+  "options": [],
+  "reasons": [
+   "Fancy indexing tạo bản sao; sửa b không sửa phần tử nguồn."
+  ],
+  "type": "Đọc code",
+  "key": "1",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B148",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.array",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.array([True,False]).dtype.kind",
+  "options": [],
+  "reasons": [
+   "Mã loại dtype của mảng Boolean là b."
+  ],
+  "type": "Đọc code",
+  "key": "'b'",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B149",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.array",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.array([1,2,3],dtype=np.int16).nbytes",
+  "options": [],
+  "reasons": [
+   "int16 dùng hai byte một phần tử; ba phần tử cần sáu byte."
+  ],
+  "type": "Đọc code",
+  "key": "6",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B150",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.array",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.array([1.9,-2.2]).astype(int).tolist()",
+  "options": [],
+  "reasons": [
+   "Ép float thành int cắt phần thập phân về 0."
+  ],
+  "type": "Đọc code",
+  "key": "[1, -2]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B151",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.diff",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.diff([2,5,4],n=2).tolist()",
+  "options": [],
+  "reasons": [
+   "Hiệu bậc một là [3,−1]; hiệu lần hai là −4."
+  ],
+  "type": "Đọc code",
+  "key": "[-4]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B152",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.ediff1d",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.ediff1d([[1,2],[6,8]]).tolist()",
+  "options": [],
+  "reasons": [
+   "ediff1d làm phẳng trước khi lấy sai phân liên tiếp."
+  ],
+  "type": "Đọc code",
+  "key": "[1, 4, 2]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B153",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.cumprod",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.cumprod([2,3,4]).tolist()",
+  "options": [],
+  "reasons": [
+   "Mỗi vị trí là tích mọi phần tử từ đầu đến đó."
+  ],
+  "type": "Đọc code",
+  "key": "[2, 6, 24]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B154",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.ptp",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.ptp([3,8,4]).item()",
+  "options": [],
+  "reasons": [
+   "Peak-to-peak là giá trị lớn nhất trừ nhỏ nhất."
+  ],
+  "type": "Đọc code",
+  "key": "5",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B155",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.percentile",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.percentile([0,10,20],25).item()",
+  "options": [],
+  "reasons": [
+   "Phân vị tuyến tính 25% nằm giữa 0 và 10."
+  ],
+  "type": "Đọc code",
+  "key": "5.0",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B156",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.std",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.std([1,3],ddof=0).item()",
+  "options": [],
+  "reasons": [
+   "Trung bình là 2, phương sai tổng thể là 1, độ lệch chuẩn là 1."
+  ],
+  "type": "Đọc code",
+  "key": "1.0",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B157",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.var",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.var([2,4],ddof=1).item()",
+  "options": [],
+  "reasons": [
+   "Tổng bình phương độ lệch là 2, mẫu số n−1 bằng 1."
+  ],
+  "type": "Đọc code",
+  "key": "2.0",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B158",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.nanmean",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.nanmean([1,np.nan,3]).item()",
+  "options": [],
+  "reasons": [
+   "nanmean bỏ quan sát NaN khi tính cả tử số và mẫu số."
+  ],
+  "type": "Đọc code",
+  "key": "2.0",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B159",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.nansum",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.nansum([np.nan,np.nan]).item()",
+  "options": [],
+  "reasons": [
+   "Không còn hạng tử hữu hạn nên nansum cho phần tử trung hòa 0."
+  ],
+  "type": "Đọc code",
+  "key": "0.0",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B160",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.isfinite",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.isfinite([0,np.inf,np.nan]).tolist()",
+  "options": [],
+  "reasons": [
+   "Chỉ số 0 là giá trị hữu hạn."
+  ],
+  "type": "Đọc code",
+  "key": "[True, False, False]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B161",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.sign",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.sign([-3,0,8]).tolist()",
+  "options": [],
+  "reasons": [
+   "sign mã hóa dấu âm, không và dương bằng −1,0,1."
+  ],
+  "type": "Đọc code",
+  "key": "[-1, 0, 1]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B162",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.maximum",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.maximum([1,5],[3,2]).tolist()",
+  "options": [],
+  "reasons": [
+   "maximum so từng cặp theo vị trí và giữ giá trị cao hơn."
+  ],
+  "type": "Đọc code",
+  "key": "[3, 5]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B163",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.mod",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.mod([5,6],4).tolist()",
+  "options": [],
+  "reasons": [
+   "Tính phần dư theo phần tử với số chia broadcast bằng 4."
+  ],
+  "type": "Đọc code",
+  "key": "[1, 2]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B164",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.logical_xor",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.logical_xor([True,True],[True,False]).tolist()",
+  "options": [],
+  "reasons": [
+   "XOR đúng nếu đúng chính xác một trong hai toán hạng."
+  ],
+  "type": "Đọc code",
+  "key": "[False, True]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B165",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.logical_and.reduce",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.logical_and.reduce([True,False,True]).item()",
+  "options": [],
+  "reasons": [
+   "Phép AND gộp qua toàn bộ dãy gặp một giá trị False."
+  ],
+  "type": "Đọc code",
+  "key": "False",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B166",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.all",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.all([[1,0],[2,3]],axis=1).tolist()",
+  "options": [],
+  "reasons": [
+   "Trục 1 thu gọn cột, hàng đầu có số 0 nên False."
+  ],
+  "type": "Đọc code",
+  "key": "[False, True]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B167",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.unique",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.unique([3,1,3,2]).tolist()",
+  "options": [],
+  "reasons": [
+   "unique mặc định trả tập giá trị phân biệt có thứ tự tăng dần."
+  ],
+  "type": "Đọc code",
+  "key": "[1, 2, 3]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B168",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.intersect1d",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.intersect1d([3,1,3],[3,4]).tolist()",
+  "options": [],
+  "reasons": [
+   "intersect1d nhận các giá trị chung, loại trùng và sắp xếp."
+  ],
+  "type": "Đọc code",
+  "key": "[3]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B169",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.isin",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.isin([1,4,2],[2,4]).tolist()",
+  "options": [],
+  "reasons": [
+   "isin kiểm tra từng phần tử mảng đầu có thuộc tập tham chiếu."
+  ],
+  "type": "Đọc code",
+  "key": "[False, True, True]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B170",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.searchsorted",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.searchsorted([1,3,3,6],3,side='right').item()",
+  "options": [],
+  "reasons": [
+   "side right trả điểm chèn phía sau nhóm bằng nhau."
+  ],
+  "type": "Đọc code",
+  "key": "3",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B171",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.histogram",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.histogram([0,1,2,3],bins=[0,2,4])[0].tolist()",
+  "options": [],
+  "reasons": [
+   "Bin đầu giữ 0 và 1; bin sau giữ 2 và 3."
+  ],
+  "type": "Đọc code",
+  "key": "[2, 2]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B172",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.outer",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.outer([1,2],[3,4]).tolist()",
+  "options": [],
+  "reasons": [
+   "Outer product nhân mỗi phần tử vector đầu với mọi phần tử vector sau."
+  ],
+  "type": "Đọc code",
+  "key": "[[3, 4], [6, 8]]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B173",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.inner",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.inner([1,3],[2,4]).item()",
+  "options": [],
+  "reasons": [
+   "Tích vô hướng một chiều cộng hai tích tương ứng."
+  ],
+  "type": "Đọc code",
+  "key": "14",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B174",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.linalg.matrix_rank",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.linalg.matrix_rank([[1,2],[2,4]]).item()",
+  "options": [],
+  "reasons": [
+   "Hàng thứ hai là hai lần hàng thứ nhất, chỉ một hàng độc lập."
+  ],
+  "type": "Đọc code",
+  "key": "1",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B175",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "round",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nround(np.linalg.det([[2,0],[0,3]]))",
+  "options": [],
+  "reasons": [
+   "Định thức ma trận chéo là tích phần tử đường chéo."
+  ],
+  "type": "Đọc code",
+  "key": "6",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B176",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.linalg.solve",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.linalg.solve([[2,0],[0,4]],[6,8]).tolist()",
+  "options": [],
+  "reasons": [
+   "Hai phương trình độc lập 2x=6 và 4y=8."
+  ],
+  "type": "Đọc code",
+  "key": "[3.0, 2.0]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B177",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.linalg.norm",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.linalg.norm([3,4],ord=1).item()",
+  "options": [],
+  "reasons": [
+   "Chuẩn L1 là tổng trị tuyệt đối, bằng 7."
+  ],
+  "type": "Đọc code",
+  "key": "7.0",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B178",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.einsum",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.einsum('ii->i',np.array([[1,2],[3,4]])).tolist()",
+  "options": [],
+  "reasons": [
+   "Hai chỉ số trùng trong đầu vào lấy đường chéo; giữ i ở đầu ra."
+  ],
+  "type": "Đọc code",
+  "key": "[1, 4]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B179",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.meshgrid",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.meshgrid([1,2],[4,5,6])[0].shape",
+  "options": [],
+  "reasons": [
+   "Với indexing xy mặc định, số hàng theo y và số cột theo x."
+  ],
+  "type": "Đọc code",
+  "key": "(3, 2)",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B180",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.pad",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.pad([2,4],(1,2),constant_values=0).tolist()",
+  "options": [],
+  "reasons": [
+   "Thêm một ô trước và hai ô sau bằng giá trị hằng."
+  ],
+  "type": "Đọc code",
+  "key": "[0, 2, 4, 0, 0]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B181",
+  "module": "B",
+  "topic": "NumPy",
+  "subtopic": "np.sort",
+  "prompt": "Cho import numpy as np. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nnp.sort([[4,1],[2,3]],axis=None).tolist()",
+  "options": [],
+  "reasons": [
+   "axis=None sắp xếp toàn bộ dữ liệu đã làm phẳng."
+  ],
+  "type": "Đọc code",
+  "key": "[1, 2, 3, 4]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "NumPy"
+  ],
+  "seconds": 70,
+  "related": "NumPy",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://numpy.org/doc/stable/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B182",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([7,8],index=['b','a']).loc['a'].item()",
+  "options": [],
+  "reasons": [
+   "loc tìm nhãn a, giá trị này ở vị trí thứ hai."
+  ],
+  "type": "Đọc code",
+  "key": "8",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B183",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([8,9,10],index=[1,2,3]).loc[1:2].tolist()",
+  "options": [],
+  "reasons": [
+   "Cắt theo nhãn bằng loc bao gồm cả nhãn cuối 2."
+  ],
+  "type": "Đọc code",
+  "key": "[8, 9]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B184",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([8,9,10]).iloc[1:2].tolist()",
+  "options": [],
+  "reasons": [
+   "Cắt theo vị trí iloc loại vị trí kết thúc, chỉ còn phần tử thứ hai."
+  ],
+  "type": "Đọc code",
+  "key": "[9]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B185",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([3,5],index=['a','b']).reindex(['b','c'],fill_value=0).tolist()",
+  "options": [],
+  "reasons": [
+   "reindex xếp lại theo nhãn đích và điền 0 cho nhãn mới."
+  ],
+  "type": "Đọc code",
+  "key": "[5, 0]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B186",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([2,4],index=['a','b']).add(pd.Series([3],index=['b']),fill_value=0).tolist()",
+  "options": [],
+  "reasons": [
+   "Hai Series căn theo nhãn; fill_value thay giá trị thiếu trước khi cộng."
+  ],
+  "type": "Đọc code",
+  "key": "[2.0, 7.0]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B187",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([1,None,3]).count().item()",
+  "options": [],
+  "reasons": [
+   "count bỏ quan sát thiếu trong khi size tính mọi vị trí."
+  ],
+  "type": "Đọc code",
+  "key": "2",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B188",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([1,1,3,3,3]).value_counts().index[0].item()",
+  "options": [],
+  "reasons": [
+   "value_counts mặc định xếp tần suất giảm dần, khóa đầu là giá trị phổ biến nhất."
+  ],
+  "type": "Đọc code",
+  "key": "3",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B189",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([3,3,1,1]).mode().tolist()",
+  "options": [],
+  "reasons": [
+   "Cả hai giá trị có tần suất tối đa, mode trả tất cả mode theo thứ tự."
+  ],
+  "type": "Đọc code",
+  "key": "[1, 3]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B190",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([10,5,10]).rank(method='min',ascending=False).tolist()",
+  "options": [],
+  "reasons": [
+   "Hai giá trị 10 cùng hạng 1; hạng kế tiếp theo kiểu min là 3."
+  ],
+  "type": "Đọc code",
+  "key": "[1.0, 3.0, 1.0]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B191",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([2,8,1]).idxmax()",
+  "options": [],
+  "reasons": [
+   "idxmax trả nhãn index của giá trị lớn nhất, ở đây là 1."
+  ],
+  "type": "Đọc code",
+  "key": "1",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B192",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series(['A','',None]).isna().tolist()",
+  "options": [],
+  "reasons": [
+   "Chuỗi rỗng vẫn là một giá trị, chỉ None là missing."
+  ],
+  "type": "Đọc code",
+  "key": "[False, False, True]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B193",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([1,None,3]).interpolate().tolist()",
+  "options": [],
+  "reasons": [
+   "Nội suy tuyến tính giữa hai quan sát kề nhau cho giá trị giữa là 2."
+  ],
+  "type": "Đọc code",
+  "key": "[1.0, 2.0, 3.0]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B194",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([None,2,None,4]).bfill().tolist()",
+  "options": [],
+  "reasons": [
+   "Điền lùi lấy quan sát hợp lệ tiếp theo cho từng vị trí trống."
+  ],
+  "type": "Đọc code",
+  "key": "[2.0, 2.0, 4.0, 4.0]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B195",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([1,2,3]).where(lambda s:s>1,0).tolist()",
+  "options": [],
+  "reasons": [
+   "where giữ dữ liệu khi điều kiện đúng, còn lại thay bằng 0."
+  ],
+  "type": "Đọc code",
+  "key": "[0, 2, 3]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B196",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([1,2,3]).mask(lambda s:s>1,0).tolist()",
+  "options": [],
+  "reasons": [
+   "mask thay các vị trí thỏa điều kiện, ngược với where."
+  ],
+  "type": "Đọc code",
+  "key": "[1, 0, 0]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B197",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([1,2,3]).between(1,2,inclusive='right').tolist()",
+  "options": [],
+  "reasons": [
+   "Chỉ đầu mút phải được tính; giá trị 2 thỏa khoảng."
+  ],
+  "type": "Đọc code",
+  "key": "[False, True, False]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B198",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([2,1,2]).drop_duplicates(keep=False).tolist()",
+  "options": [],
+  "reasons": [
+   "keep=False loại toàn bộ hàng có giá trị trùng, kể cả lần đầu."
+  ],
+  "type": "Đọc code",
+  "key": "[1]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B199",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([4,7,1]).nlargest(2).tolist()",
+  "options": [],
+  "reasons": [
+   "nlargest chọn hai giá trị lớn nhất theo thứ tự giảm dần."
+  ],
+  "type": "Đọc code",
+  "key": "[7, 4]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B200",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([1,1,2]).duplicated(keep='last').tolist()",
+  "options": [],
+  "reasons": [
+   "Bản sao trước lần xuất hiện cuối của giá trị 1 được đánh dấu True."
+  ],
+  "type": "Đọc code",
+  "key": "[True, False, False]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B201",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series(['ID-01','ID-12']).str.extract(r'(\\d+)',expand=False).tolist()",
+  "options": [],
+  "reasons": [
+   "Nhóm bắt chữ số được trả về dạng chuỗi nên số 0 đầu được giữ."
+  ],
+  "type": "Đọc code",
+  "key": "['01', '12']",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B202",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series(['3','45']).str.pad(3,fillchar='0').tolist()",
+  "options": [],
+  "reasons": [
+   "pad mặc định thêm vào bên trái cho đủ chiều dài."
+  ],
+  "type": "Đọc code",
+  "key": "['003', '045']",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B203",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series(['ai.lab','aixlab']).str.contains('ai.',regex=False).tolist()",
+  "options": [],
+  "reasons": [
+   "regex=False tìm chuỗi có dấu chấm literal."
+  ],
+  "type": "Đọc code",
+  "key": "[True, False]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B204",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series(['ai','lab']).str.cat(sep=' / ')",
+  "options": [],
+  "reasons": [
+   "str.cat với sep nối các phần tử thành một chuỗi duy nhất."
+  ],
+  "type": "Đọc code",
+  "key": "'ai / lab'",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B205",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series(['AI','data']).str.slice(stop=2).tolist()",
+  "options": [],
+  "reasons": [
+   "Lấy hai ký tự đầu của từng chuỗi qua accessor str."
+  ],
+  "type": "Đọc code",
+  "key": "['AI', 'da']",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B206",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series(['one-two']).str.split('-',expand=True).shape",
+  "options": [],
+  "reasons": [
+   "expand=True mở từng phần tách thành cột trong DataFrame."
+  ],
+  "type": "Đọc code",
+  "key": "(1, 2)",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B207",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.DataFrame",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.DataFrame({'a':[1,2],'b':[3,4]}).size",
+  "options": [],
+  "reasons": [
+   "size đếm tất cả ô trong bảng chứ không chỉ số hàng."
+  ],
+  "type": "Đọc code",
+  "key": "4",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B208",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.DataFrame",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.DataFrame({'a':[1],'b':[2]}).drop(columns='b').columns.tolist()",
+  "options": [],
+  "reasons": [
+   "drop theo columns bỏ cột b, giữ nguyên các hàng."
+  ],
+  "type": "Đọc code",
+  "key": "['a']",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B209",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.DataFrame",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.DataFrame({'a':[1]}).rename(columns={'a':'key'}).columns.tolist()",
+  "options": [],
+  "reasons": [
+   "rename thay tên cột theo ánh xạ, không đổi giá trị."
+  ],
+  "type": "Đọc code",
+  "key": "['key']",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B210",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.DataFrame",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.DataFrame({'v':[1,2]}).assign(w=lambda d:d.v*2).w.tolist()",
+  "options": [],
+  "reasons": [
+   "assign tính cột mới theo dữ liệu của bảng đang nhận."
+  ],
+  "type": "Đọc code",
+  "key": "[2, 4]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B211",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.DataFrame",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.DataFrame({'id':['A','B'],'v':[1,2]}).set_index('id').index.tolist()",
+  "options": [],
+  "reasons": [
+   "set_index chuyển cột id thành nhãn hàng theo thứ tự hiện có."
+  ],
+  "type": "Đọc code",
+  "key": "['A', 'B']",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B212",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.DataFrame",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.DataFrame({'v':[3]},index=['k']).reset_index(drop=True).index.tolist()",
+  "options": [],
+  "reasons": [
+   "drop=True bỏ nhãn cũ và tạo RangeIndex bắt đầu từ 0."
+  ],
+  "type": "Đọc code",
+  "key": "[0]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B213",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.DataFrame",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.DataFrame({'x':[2,4,6]}).query('x >= 4').x.tolist()",
+  "options": [],
+  "reasons": [
+   "Biểu thức query lọc hàng có x bằng hoặc lớn hơn ngưỡng."
+  ],
+  "type": "Đọc code",
+  "key": "[4, 6]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B214",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.DataFrame",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.DataFrame({'a':[1,None],'b':[None,None]}).dropna(axis=1,how='all').columns.tolist()",
+  "options": [],
+  "reasons": [
+   "Chỉ cột hoàn toàn thiếu bị loại; cột a còn một giá trị."
+  ],
+  "type": "Đọc code",
+  "key": "['a']",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B215",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.DataFrame",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.DataFrame({'a':[1,None],'b':[2,3]}).dropna(thresh=2).index.tolist()",
+  "options": [],
+  "reasons": [
+   "thresh=2 yêu cầu hàng có hai giá trị không thiếu."
+  ],
+  "type": "Đọc code",
+  "key": "[0]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B216",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.DataFrame",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.DataFrame({'k':['a','a','b'],'v':[1,None,4]}).groupby('k').size().tolist()",
+  "options": [],
+  "reasons": [
+   "size tính cả hàng có v thiếu trong mỗi nhóm."
+  ],
+  "type": "Đọc code",
+  "key": "[2, 1]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B217",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.DataFrame",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.DataFrame({'k':['a','a','b'],'v':[1,None,4]}).groupby('k').v.count().tolist()",
+  "options": [],
+  "reasons": [
+   "count trên v chỉ tính các quan sát v hợp lệ của từng nhóm."
+  ],
+  "type": "Đọc code",
+  "key": "[1, 1]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B218",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.DataFrame",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.DataFrame({'k':['a','b','a']}).groupby('k').cumcount().tolist()",
+  "options": [],
+  "reasons": [
+   "cumcount bắt đầu từ 0 và đánh số lần xuất hiện trong từng nhóm."
+  ],
+  "type": "Đọc code",
+  "key": "[0, 0, 1]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B219",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.DataFrame",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.DataFrame({'k':['b','a'],'v':[1,2]}).groupby('k',sort=False).v.sum().index.tolist()",
+  "options": [],
+  "reasons": [
+   "sort=False giữ thứ tự khóa theo lần đầu xuất hiện."
+  ],
+  "type": "Đọc code",
+  "key": "['b', 'a']",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B220",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.DataFrame",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.DataFrame({'k':['x','x'],'v':[1,3]}).groupby('k').v.agg(['min','max']).iloc[0].tolist()",
+  "options": [],
+  "reasons": [
+   "agg áp dụng hai hàm trên cùng nhóm và trả thứ tự đã liệt kê."
+  ],
+  "type": "Đọc code",
+  "key": "[1, 3]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B221",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.concat",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.concat([pd.Series([1]),pd.Series([2])],ignore_index=False).index.tolist()",
+  "options": [],
+  "reasons": [
+   "concat mặc định giữ index nguồn nên hai nhãn 0 cùng tồn tại."
+  ],
+  "type": "Đọc code",
+  "key": "[0, 0]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B222",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.DataFrame",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.DataFrame({'a':[1,2],'b':[3,4]}).melt().shape",
+  "options": [],
+  "reasons": [
+   "Hai cột đo của hai hàng thành bốn hàng biến–giá trị."
+  ],
+  "type": "Đọc code",
+  "key": "(4, 2)",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B223",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.crosstab",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.crosstab(['a','a','b'],['x','y','x']).loc['a','x'].item()",
+  "options": [],
+  "reasons": [
+   "crosstab đếm số lần xuất hiện của mỗi cặp nhãn."
+  ],
+  "type": "Đọc code",
+  "key": "1",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B224",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([1,3,5]).expanding().mean().tolist()",
+  "options": [],
+  "reasons": [
+   "Cửa sổ mở rộng luôn bắt đầu ở đầu dãy và lớn dần."
+  ],
+  "type": "Đọc code",
+  "key": "[1.0, 2.0, 3.0]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B225",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([1,2,3]).shift(1,fill_value=0).tolist()",
+  "options": [],
+  "reasons": [
+   "shift dời giá trị về phía chỉ số lớn hơn và điền đầu dãy."
+  ],
+  "type": "Đọc code",
+  "key": "[0, 1, 2]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B226",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([2,3,5]).rolling(2).count().iloc[-1].item()",
+  "options": [],
+  "reasons": [
+   "Cửa sổ cuối có hai giá trị hợp lệ nên count bằng 2."
+  ],
+  "type": "Đọc code",
+  "key": "2.0",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B227",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Timestamp",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Timestamp('2024-02-29').is_leap_year",
+  "options": [],
+  "reasons": [
+   "Năm 2024 chia hết cho 4 và không phải năm tròn thế kỷ."
+  ],
+  "type": "Đọc code",
+  "key": "True",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B228",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Timestamp",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Timestamp('2024-02-05').days_in_month",
+  "options": [],
+  "reasons": [
+   "Tháng hai năm nhuận có 29 ngày."
+  ],
+  "type": "Đọc code",
+  "key": "29",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B229",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.date_range",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.date_range('2024-01-01',periods=3,freq='2D')[-1].day",
+  "options": [],
+  "reasons": [
+   "Ba mốc cách nhau hai ngày là ngày 1,3,5."
+  ],
+  "type": "Đọc code",
+  "key": "5",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B230",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Timedelta",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Timedelta('2 days 4 hours').total_seconds()",
+  "options": [],
+  "reasons": [
+   "Hai ngày và bốn giờ tương ứng 52 giờ, mỗi giờ 3600 giây."
+  ],
+  "type": "Đọc code",
+  "key": "187200.0",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B231",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Period",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Period('2024-12',freq='M').quarter",
+  "options": [],
+  "reasons": [
+   "Tháng 12 thuộc quý IV theo năm dương lịch."
+  ],
+  "type": "Đọc code",
+  "key": "4",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B232",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.cut",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.cut([0,5,10],bins=[-1,5,10],labels=['low','high']).tolist()",
+  "options": [],
+  "reasons": [
+   "Mặc định biên phải đóng nên 5 vẫn thuộc nhóm low."
+  ],
+  "type": "Đọc code",
+  "key": "['low', 'low', 'high']",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B233",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([1,100,3]).clip(upper=10).tolist()",
+  "options": [],
+  "reasons": [
+   "clip giới hạn phần trên mà giữ nguyên giá trị dưới ngưỡng."
+  ],
+  "type": "Đọc code",
+  "key": "[1, 10, 3]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B234",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([3,1,3]).factorize()[0].tolist()",
+  "options": [],
+  "reasons": [
+   "factorize mặc định cấp mã theo thứ tự gặp giá trị mới."
+  ],
+  "type": "Đọc code",
+  "key": "[0, 1, 0]",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B235",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Index",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Index(['a','b','c']).get_loc('b')",
+  "options": [],
+  "reasons": [
+   "get_loc trả vị trí nhãn b trong index duy nhất."
+  ],
+  "type": "Đọc code",
+  "key": "1",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B236",
+  "module": "B",
+  "topic": "Pandas",
+  "subtopic": "pd.Series",
+  "prompt": "Cho import pandas as pd. Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\npd.Series([True,False,True]).mean().item()",
+  "options": [],
+  "reasons": [
+   "Trung bình Boolean là tỷ lệ phần tử True trong dãy."
+  ],
+  "type": "Đọc code",
+  "key": "0.6666666666666666",
+  "level": 2,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "Pandas"
+  ],
+  "seconds": 70,
+  "related": "Pandas",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://pandas.pydata.org/docs/",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B237",
+  "module": "B",
+  "topic": "SQL",
+  "subtopic": "import sqlite3; db=sqlite3.connect",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nimport sqlite3\ndb=sqlite3.connect(':memory:')\ndb.execute('SELECT COALESCE(NULL,0,7)').fetchone()[0]",
+  "options": [],
+  "reasons": [
+   "COALESCE lấy biểu thức đầu tiên khác NULL, bao gồm số 0."
+  ],
+  "type": "Đọc code",
+  "key": "0",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "SQL"
+  ],
+  "seconds": 70,
+  "related": "SQL",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://www.sqlite.org/lang.html",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B238",
+  "module": "B",
+  "topic": "SQL",
+  "subtopic": "import sqlite3; db=sqlite3.connect",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nimport sqlite3\ndb=sqlite3.connect(':memory:')\ndb.execute('SELECT COUNT(NULL)').fetchone()[0]",
+  "options": [],
+  "reasons": [
+   "COUNT trên biểu thức bỏ qua NULL nên không tính bản ghi nào."
+  ],
+  "type": "Đọc code",
+  "key": "0",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "SQL"
+  ],
+  "seconds": 70,
+  "related": "SQL",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://www.sqlite.org/lang.html",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B239",
+  "module": "B",
+  "topic": "SQL",
+  "subtopic": "import sqlite3; db=sqlite3.connect",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nimport sqlite3\ndb=sqlite3.connect(':memory:')\ndb.execute('SELECT 1 UNION SELECT 1').fetchall()",
+  "options": [],
+  "reasons": [
+   "UNION loại dòng trùng giữa hai kết quả. fetchall trả list các tuple."
+  ],
+  "type": "Đọc code",
+  "key": "[(1,)]",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "SQL"
+  ],
+  "seconds": 70,
+  "related": "SQL",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://www.sqlite.org/lang.html",
+  "reasonTitle": "Output Python"
+ },
+ {
+  "id": "B240",
+  "module": "B",
+  "topic": "SQL",
+  "subtopic": "import sqlite3; db=sqlite3.connect",
+  "prompt": "Đọc đoạn mã và nhập giá trị của biểu thức cuối theo dạng Python (chuỗi đặt trong dấu nháy).\n\nimport sqlite3\ndb=sqlite3.connect(':memory:')\ndb.execute('SELECT LENGTH(TRIM(\" AI \"))').fetchone()[0]",
+  "options": [],
+  "reasons": [
+   "TRIM loại khoảng trắng hai đầu; LENGTH đếm hai ký tự còn lại."
+  ],
+  "type": "Đọc code",
+  "key": "2",
+  "level": 3,
+  "skill": "Theo dõi trạng thái và output",
+  "tags": [
+   "SQL"
+  ],
+  "seconds": 70,
+  "related": "SQL",
+  "version": "1.2",
+  "status": "Đã chạy biểu thức tham chiếu",
+  "source": "https://www.sqlite.org/lang.html",
+  "reasonTitle": "Output Python"
+ }
+]
