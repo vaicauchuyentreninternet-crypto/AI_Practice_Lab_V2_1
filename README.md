@@ -1,5 +1,9 @@
 # AI Practice Lab
 
+Phần 3 có thử thách tuần và bảng xếp hạng. Xem HANDOFF_PART_3.md để kích hoạt.
+Bản V3 phần 2 bổ sung chữa bài theo đáp án và luyện tiếp theo chủ đề. Xem HANDOFF_PART_2.md cho kết quả kiểm thử và điểm bàn giao.
+
+Bản V3 phần 1 bổ sung tài khoản sinh viên và đồng bộ. Xem HANDOFF_PART_1.md để cấu hình dịch vụ và nghiệm thu.
 Phòng học AI cá nhân bằng tiếng Việt. Mở trên máy Windows bằng cách chạy START_WINDOWS.bat ở thư mục đã giải nén. Cần Python 3.10 trở lên. Trên macOS hoặc Linux chạy lệnh sau rồi mở http://localhost:8000.
 
 ```sh

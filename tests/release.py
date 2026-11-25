@@ -39,7 +39,7 @@ check('02 schemas, duplicates and 200 exercise cases',lambda:run(sys.executable,
 check('03 math, Python outputs and lesson examples',lambda:run(sys.executable,'tests/knowledge.py'))
 check('04 seven project integrations',lambda:run(sys.executable,'site/projects/projects_test.py'))
 check('05 JS module graph and syntax',module_graph)
-check('06 grading, selection, storage schema and CSV edge cases',lambda:run('node','--test','tests/engine.test.mjs'))
+check('06 grading, selection, storage schema and CSV edge cases',lambda:run('node','--test','tests/engine.test.mjs','tests/cloud.test.mjs'))
 check('07 curriculum references and shell assets',links)
 check('08 HTTP project subdirectory',subpath)
 check('09 Pages deployment dependencies',deployment)
