@@ -1,7 +1,7 @@
 name: Verify and deploy AI Practice Lab
 on:
   push:
-    branches: [master, main]
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
