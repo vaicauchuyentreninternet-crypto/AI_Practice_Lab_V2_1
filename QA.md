@@ -25,3 +25,13 @@ Mười kiểm tra release đều pass. Bên trong có 11 bài test Node, 7 bài
 Đã triển khai trang Hỏi học liệu với truy xuất BM25 trong 18 bài, hiển thị nguồn gốc, adapter sinh trả lời và kiểm tra đoạn trích nguyên văn. Trang Luyện tự luận có 4 đề, 16 tiêu chí, tự đối chiếu, lưu nháp và adapter đánh giá có dẫn chứng. Kiểm thử Chrome tìm đúng bài Broadcasting, mở được rubric và khôi phục bài sau refresh. Các test Node kiểm tra từ chối nguồn giả, trích dẫn sai, rubric thiếu và điểm thiếu bằng chứng.
 
 Tự đánh giá trang truy xuất 9,0/10, luồng tự luận 9,0/10. Chưa đo độ nhất quán của mô hình thật trên tập bài được giáo viên chấm, chưa chạy production GitHub Actions, chưa nghiệm thu Safari và điện thoại thật. Bảng điểm bên trên là mốc của vòng trước. Điểm và bằng chứng mới chỉ cập nhật cho hai luồng vừa bổ sung.
+
+## V3 phần 1
+
+Đăng nhập và đồng bộ được bàn giao riêng trong HANDOFF_PART_1.md. Đã vượt 10 kiểm tra release, gồm kiểm thử logic đồng bộ với dịch vụ giả lập. Tự đánh giá phần tài khoản 8,5/10 cho đến khi có kết quả OTP/email, RLS và chuyển thiết bị với dịch vụ thật. Điểm của các phần V2 ở trên thuộc lần bàn giao trước.
+
+## Kiểm tra bản nâng cấp 90/10
+Xem QUALITY_REPORT.md cho kết quả chạy hiện tại. Điểm của các phiên trước không đại diện cho bản nâng cấp.
+
+## Rà soát ngân hàng và khóa gợi ý
+Chạy python tests/bank_quality.py để kiểm tra số phương án, trùng nội dung, khóa đáp án, lời giải mỗi phương án và cảnh báo độ dài đáp án đúng. Chạy python tests/release.py để kiểm tra chức năng và phần học lại của ngân hàng. Chỉ số độ dài là phép sàng lọc, không đo được chất lượng ngữ nghĩa của phương án nhiễu.

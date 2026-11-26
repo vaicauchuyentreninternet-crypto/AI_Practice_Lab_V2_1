@@ -21,11 +21,19 @@ jobs:
           python-version: '3.12'
       - run: python -m pip install -r tests/requirements.txt
       - run: python -m playwright install --with-deps chromium
+      - name: Verify weekly challenge on PostgreSQL
+        run: |
+          sudo systemctl start postgresql
+          sudo -u postgres createdb weekly_test
+          (cat tests/weekly.sql | sed '/^\\ir /{r supabase/002_weekly.sql
+          d;}') | sudo -u postgres psql -X -v ON_ERROR_STOP=1 -d weekly_test
       - run: python tests/content.py
+      - run: python tests/bank_quality.py
       - run: python tests/knowledge.py
       - run: python site/projects/projects_test.py
-      - run: node --test tests/engine.test.mjs
+      - run: node --test tests/engine.test.mjs tests/cloud.test.mjs
       - run: python tests/browser.py
+      - run: python tests/corrections_browser.py
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
@@ -43,3 +51,4 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+

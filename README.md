@@ -1,5 +1,13 @@
+# Bắt đầu với Codex
+
+Nếu tiếp tục phát triển bằng Codex, hãy đọc `AGENTS.md` và `CODEX_HANDOFF_NEXT.md` trước. Đây là hướng dẫn hiện hành, ghi rõ phần đã xác minh, các thiếu sót, thứ tự xử lý, migration 001–006, cách giữ lịch sử và cách tiết kiệm token. `CODEX_DEPLOY.md` là lối vào cho bước GitHub Pages.
+
 # AI Practice Lab
 
+Phần 3 có thử thách tuần và bảng xếp hạng. Xem HANDOFF_PART_3.md để kích hoạt.
+Bản V3 phần 2 bổ sung chữa bài theo đáp án và luyện tiếp theo chủ đề. Xem HANDOFF_PART_2.md cho kết quả kiểm thử và điểm bàn giao.
+
+Bản V3 phần 1 bổ sung tài khoản sinh viên và đồng bộ. Xem HANDOFF_PART_1.md để cấu hình dịch vụ và nghiệm thu.
 Phòng học AI cá nhân bằng tiếng Việt. Mở trên máy Windows bằng cách chạy START_WINDOWS.bat ở thư mục đã giải nén. Cần Python 3.10 trở lên. Trên macOS hoặc Linux chạy lệnh sau rồi mở http://localhost:8000.
 
 ```sh
@@ -37,3 +45,8 @@ Bộ kiểm thử dùng Python 3.12 và Node 22 trở lên. Browser suite cần 
 ## Hỏi học liệu và luyện tự luận
 
 Từ Tổng quan chọn Hỏi học liệu hoặc Luyện tự luận. Tìm kiếm nguồn và tự đánh giá rubric hoạt động không cần dịch vụ AI. Để sử dụng mô hình, mở mục Kết nối mô hình, điền endpoint Chat Completions và tên model do bạn quản lý. Endpoint cần cho phép CORS từ địa chỉ app. Mỗi bài tự luận có bốn tiêu chí chấm từ 0 đến 2. Bản sao JSON bao gồm bài nháp và điểm tự đối chiếu. Kiểm tra trích nguyên văn xác nhận nguồn tồn tại; người đọc cần đối chiếu thêm xem kết luận có thật sự được nguồn hỗ trợ.
+
+## Đề thi hỗn hợp
+Thi thử, Practice Test, tạo đề từ ngân hàng và kiểm tra tổng kết dùng cấu hình điểm mặc định 90% khách quan, 10% tự luận của ứng dụng. VinUni chưa công bố tỷ trọng này trong tài liệu của dự án. Kết quả hiển thị Pending Review cho tới khi phần tự luận được chấm. Dữ liệu thi cũ dùng cấu trúc cũ.
+
+Thi thử khóa điều hướng sang học liệu trong phiên. Trả lời đủ các phần và nộp đề để mở hướng dẫn từng câu. Mục Phân bổ độ khó cho phép chọn tỷ lệ phần trăm cho năm cấp, hệ thống báo khi ngân hàng đã lọc không đủ câu. Mã nguồn hiện dùng migration Supabase 001–006 cho môi trường mới.
