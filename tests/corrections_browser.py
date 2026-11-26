@@ -7,7 +7,7 @@ from threading import Thread
 from playwright.sync_api import sync_playwright, expect
 
 root = Path(__file__).resolve().parents[1]
-questions = json.loads((root / 'site/data/B.json').read_text())
+questions = json.loads((root / 'site/data/revisions/2/B.json').read_text())
 mc = next(q for q in questions if q['options'])
 other = next(q for q in questions if q['options'] and q != mc)
 code = next(q for q in questions if q['type'] == 'Đọc code' and not q['options'])
@@ -25,7 +25,7 @@ try:
         expect(pg.locator('h1')).to_be_visible()
         pg.evaluate("""async items => {
           const {state,save}=await import('./core.js');
-          state.session={mode:'practice',ids:items.map(q=>q.id),orders:items.map(q=>q.options.map((_,i)=>i).reverse()),
+          state.session={bankRevision:2,mode:'practice',ids:items.map(q=>q.id),orders:items.map(q=>q.options.map((_,i)=>i).reverse()),
             answers:items.map(()=>-1),flags:items.map(()=>false),times:items.map(()=>0),checked:{},weights:{},
             idx:0,start:Date.now(),deadline:0,opened:0};await save();location.hash='session';
         }""", items)
