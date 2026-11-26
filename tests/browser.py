@@ -37,6 +37,7 @@ try:
         for track in ('Python','NumPy','Pandas'):
             exercise=next(x for x in labs if x['track']==track)
             page.goto(base+'#lab/'+exercise['id'])
+            expect(page.locator('#pick')).to_have_value(exercise['id'])
             page.locator('#code').fill(exercise['solution'])
             page.locator('#run').click()
             expect(page.locator('#console')).to_contain_text('2/2 ca đạt',timeout=100000)
@@ -44,3 +45,4 @@ try:
         browser.close()
 finally:
     server.shutdown()
+
