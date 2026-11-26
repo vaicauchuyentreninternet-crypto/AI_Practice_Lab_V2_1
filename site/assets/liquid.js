@@ -19,9 +19,9 @@
    for(const w of s.words){const b=w.getBoundingClientRect();w.style.setProperty('--liquid-base',getComputedStyle(w).color);w.style.setProperty('--liquid-offset-x',`${rnd(s.rect.left-b.left-scrollX)}px`);w.style.setProperty('--liquid-offset-y',`${rnd(s.rect.top-b.top-scrollY)}px`)}
    s.el.style.setProperty('--liquid-width',`${rnd(s.rect.w)}px`);s.el.style.setProperty('--liquid-height',`${rnd(s.rect.h)}px`);
    s.radius=clamp(parseFloat(getComputedStyle(s.el).fontSize)*1.42,85,245);
-   const c=getComputedStyle(s.words[0]||s.el).color.match(/[\d.]+/g)?.map(Number)||[125,24,64];
+   const c=getComputedStyle(s.words[0]||s.el).color.match(/[\d.]+/g)?.map(Number)||[20,45,83];
    const light=.2126*c[0]+.7152*c[1]+.0722*c[2]>145;
-   s.palette=light?[[255,191,213],[230,116,167],[255,228,225],[193,83,128]]:[[224,101,145],[157,19,77],[243,157,171],[102,10,52]];
+   s.palette=light?[[161,207,255],[119,181,250],[220,237,255],[103,160,230]]:[[38,83,144],[20,53,106],[57,104,170],[19,40,80]];
  }
  function getInk(el,x,y){
    let s=ink.get(el);if(s)return s;
