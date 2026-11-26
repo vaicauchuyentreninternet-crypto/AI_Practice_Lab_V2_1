@@ -1,0 +1,33 @@
+{
+  "revision": 2,
+  "source": "AI_Practice_Lab_Bank_RC2_Codex_Handoff (1).zip",
+  "files": {
+    "A.json": {
+      "sha256": "113b3f5a09eaa9d1b4cdd20427a93f405572142c2545ada9567fbb5ef9371172",
+      "bytes": 103336
+    },
+    "B.json": {
+      "sha256": "53ca979dc6b8f3033e452c6e9103a6aecb4f5ea8149f9620556cb6b347dc208c",
+      "bytes": 188923
+    },
+    "C.json": {
+      "sha256": "fc0d547f2494c1c2b267d48f78025b3e15c21a72a15bbe7833ce258c6976015c",
+      "bytes": 296762
+    },
+    "D.json": {
+      "sha256": "1c0fa589ffe13295b38a04ef4181f83c18308f1bf370304293cd2d32648ab72c",
+      "bytes": 264620
+    },
+    "extra-objectives.js": {
+      "sha256": "c0dd48b2f4461ca3b8985abc1bd6b7d1c1167d5cd03ca2f620419b4ed542b0aa",
+      "bytes": 1563
+    }
+  },
+  "questionCounts": {
+    "A": 160,
+    "B": 240,
+    "C": 220,
+    "D": 180
+  },
+  "coreTotal": 800
+}
